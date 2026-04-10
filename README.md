@@ -9,6 +9,10 @@
 </p>
 
 <p align="center">
+  <a href="README_zh-Hans.md">简体中文</a> · <a href="README_zh-Hant.md">繁體中文</a> · <a href="README_ja.md">日本語</a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="macOS 13+">
   <img src="https://img.shields.io/badge/swift-5.9-orange" alt="Swift 5.9">
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
@@ -31,7 +35,7 @@
 Requires macOS 13+ and Swift 5.9+.
 
 ```bash
-git clone https://github.com/user/pastekey.git
+git clone https://github.com/qiaoshouqing/pastekey.git
 cd pastekey
 swift build -c release
 ```
