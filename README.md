@@ -30,6 +30,12 @@
 
 ## Installation
 
+### Download the App
+
+Download `PasteKey-0.1.0-macOS-universal.zip` from the [latest release](https://github.com/qiaoshouqing/pastekey/releases/latest), unzip it, and move `PasteKey.app` to Applications. It supports Apple Silicon and Intel Macs running macOS 13 or later.
+
+The app is ad-hoc signed but not Apple notarized. If macOS blocks the first launch, open **System Settings > Privacy & Security** and choose **Open Anyway** for PasteKey. Grant Accessibility permission when prompted so hotkey pasting works.
+
 ### Build from Source
 
 Requires macOS 13+ and Swift 5.9+.
@@ -41,6 +47,8 @@ swift build -c release
 ```
 
 The built binary is at `.build/release/PasteKey`.
+
+To build the distributable app and zip on macOS, run `bash scripts/package-macos.sh 0.1.0`. The archive is written to `dist/`.
 
 ### Run Directly
 

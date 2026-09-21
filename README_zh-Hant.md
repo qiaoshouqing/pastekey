@@ -30,6 +30,12 @@
 
 ## 安裝
 
+### 下載應用程式
+
+從[最新 Release](https://github.com/qiaoshouqing/pastekey/releases/latest) 下載 `PasteKey-0.1.0-macOS-universal.zip`，解壓縮後將 `PasteKey.app` 移到「應用程式」資料夾。支援 macOS 13 或更新版本的 Apple 晶片與 Intel Mac。
+
+應用程式已做臨時簽署，但未經 Apple 公證。若 macOS 首次啟動時攔截，請到 **系統設定 > 隱私權與安全性** 選擇 **仍要打開**。也請依提示授予「輔助使用」權限，快捷鍵貼上才能運作。
+
 ### 從原始碼建構
 
 需要 macOS 13+ 和 Swift 5.9+。
@@ -41,6 +47,8 @@ swift build -c release
 ```
 
 建構產物位於 `.build/release/PasteKey`。
+
+在 macOS 執行 `bash scripts/package-macos.sh 0.1.0` 可產生可發佈的應用程式與 zip，輸出位於 `dist/`。
 
 ### 直接執行
 
