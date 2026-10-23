@@ -1,91 +1,20 @@
-<p align="center">
-  <img src="assets/icon.png" width="128" height="128" alt="PasteKey Icon">
-</p>
+<p align="center"><img src="assets/icon.png" width="128" height="128" alt="PasteKey"></p>
 
 <h1 align="center">PasteKey</h1>
 
-<p align="center">
-  一個輕量級的 macOS 選單列應用程式，讓你透過自訂快捷鍵即時貼上預設文字片段。
-</p>
+<p align="center"><b>好用的提示詞，一個鍵就貼出去。</b><br>macOS 選單列小工具，把你收藏的提示詞一鍵貼進 ChatGPT、Claude、Cursor 或任何 App。</p>
 
-<p align="center">
-  <a href="README.md">English</a> · <a href="README_zh-Hans.md">简体中文</a> · <a href="README_ja.md">日本語</a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="macOS 13+">
-  <img src="https://img.shields.io/badge/swift-5.9-orange" alt="Swift 5.9">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
-</p>
+<p align="center"><a href="README.md">English</a> · <a href="README_zh-Hans.md">简体中文</a> · <a href="README_ja.md">日本語</a></p>
 
 ---
 
-## 功能特色
+- **任何地方按 ⌥ Space**：跳出類似 Spotlight 的面板，搜尋提示詞，按 Return 就貼到游標位置。
+- **每條提示詞可單獨設定快速鍵**：常用的設成 ⌃⌥1 之類的組合鍵，按下直接貼上。
+- **提示詞市集**：內建 24 條精選提示詞，7 個分類、中英雙語，一鍵加入。目錄從本倉庫即時更新。
+- **變數**：`{{clipboard}}`、`{{input}}`、`{{date}}`、`{{time}}`，貼上時自動替換。
+- **不弄亂剪貼簿**：貼上後還原原本的剪貼簿內容。
+- **資料在本機**：提示詞存成本機 JSON，可匯出匯入。
 
-- **即時貼上** — 在任意應用程式中按下快捷鍵，預設文字立即貼上
-- **自訂快捷鍵** — 為每個片段指定任意組合鍵（如 ⌘⇧1）
-- **剪貼簿安全** — 貼上後自動恢復原有剪貼簿內容
-- **選單列應用** — 安靜地駐留在選單列，無 Dock 圖示
-- **登入時啟動** — 可選的登入時自動啟動
+在 [Releases](https://github.com/qiaoshouqing/pastekey/releases/latest) 下載 `PasteKey-1.0.0.dmg`。已通過 Apple 公證，需要 macOS 13 以上。自動貼上需在「系統設定 › 隱私權與安全性 › 輔助使用」中允許 PasteKey。
 
-## 安裝
-
-### 下載應用程式
-
-從[最新 Release](https://github.com/qiaoshouqing/pastekey/releases/latest) 下載 `PasteKey-0.1.0-macOS-universal.zip`，解壓縮後將 `PasteKey.app` 移到「應用程式」資料夾。支援 macOS 13 或更新版本的 Apple 晶片與 Intel Mac。
-
-應用程式已做臨時簽署，但未經 Apple 公證。若 macOS 首次啟動時攔截，請到 **系統設定 > 隱私權與安全性** 選擇 **仍要打開**。也請依提示授予「輔助使用」權限，快捷鍵貼上才能運作。
-
-### 從原始碼建構
-
-需要 macOS 13+ 和 Swift 5.9+。
-
-```bash
-git clone https://github.com/qiaoshouqing/pastekey.git
-cd pastekey
-swift build -c release
-```
-
-建構產物位於 `.build/release/PasteKey`。
-
-在 macOS 執行 `bash scripts/package-macos.sh 0.1.0` 可產生可發佈的應用程式與 zip，輸出位於 `dist/`。
-
-### 直接執行
-
-```bash
-swift run PasteKey
-```
-
-## 使用方法
-
-1. 點擊選單列中的剪貼簿圖示
-2. 選擇 **Settings...** 開啟主視窗
-3. 從左側邊欄選擇一個片段（或點擊 **+** 新增）
-4. 輸入你想要快速貼上的文字
-5. 點擊快捷鍵錄製框，按下組合鍵（如 ⌘⇧1）
-6. 關閉視窗 — 現在在任意應用程式中按下該快捷鍵即可貼上文字
-
-### 輔助使用權限
-
-PasteKey 需要輔助使用權限來模擬鍵盤貼上操作。首次啟動時，macOS 會提示你在 **系統設定 > 隱私權與安全性 > 輔助使用** 中授予權限。
-
-## 運作原理
-
-當你按下快捷鍵時，PasteKey 會：
-
-1. 儲存目前剪貼簿內容
-2. 將片段文字寫入剪貼簿
-3. 模擬 ⌘V 進行貼上
-4. 恢復原有的剪貼簿內容
-
-因此它幾乎可以在所有支援貼上的應用程式中運作。
-
-## 技術棧
-
-- SwiftUI + AppKit
-- [HotKey](https://github.com/soffes/HotKey) 用於全域快捷鍵註冊
-- Swift Package Manager
-
-## 授權條款
-
-[MIT](LICENSE)
+MIT © POMODIARY LLC
