@@ -6,23 +6,29 @@ enum TemplateVariable: String, CaseIterable, Hashable {
 
     var tokens: [String] {
         switch self {
-        case .clipboard: return ["{{剪贴板}}", "{{clipboard}}"]
+        case .clipboard: return ["{{剪贴板}}", "{{clipboard}}", "{{剪貼簿}}"]
         case .date: return ["{{日期}}", "{{date}}"]
-        case .time: return ["{{时间}}", "{{time}}"]
-        case .input: return ["{{输入}}", "{{input}}"]
+        case .time: return ["{{时间}}", "{{time}}", "{{時間}}"]
+        case .input: return ["{{输入}}", "{{input}}", "{{輸入}}"]
         }
     }
 
     var label: String {
         switch self {
-        case .clipboard: return L.t("剪贴板内容", "Clipboard")
-        case .date: return L.t("今天日期", "Today's date")
-        case .time: return L.t("现在时间", "Current time")
-        case .input: return L.t("粘贴前现填", "Ask when pasting")
+        case .clipboard: return L.t("剪贴板内容", "Clipboard", ja: "クリップボード")
+        case .date: return L.t("今天日期", "Today's date", ja: "今日の日付")
+        case .time: return L.t("现在时间", "Current time", ja: "現在の時刻")
+        case .input: return L.t("粘贴前现填", "Ask when pasting", ja: "貼り付け時に入力")
         }
     }
 
-    var insertToken: String { L.isChinese ? tokens[0] : tokens[1] }
+    var insertToken: String {
+        switch L.lang {
+        case .zhHans: return tokens[0]
+        case .zhHant: return tokens.count > 2 ? tokens[2] : tokens[0]
+        case .en, .ja: return tokens[1]
+        }
+    }
 }
 
 enum TemplateRenderer {

@@ -72,7 +72,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private func deliver(_ text: String, paste: Bool) {
         hidePanel()
         let pasted = PasteService.paste(text, autoPaste: paste && settings.autoPaste, restoreClipboard: settings.restoreClipboard)
-        if !pasted { Toast.show(L.t("已复制，按 ⌘V 粘贴", "Copied — press ⌘V to paste")) }
+        if !pasted { Toast.show(L.t("已复制，按 ⌘V 粘贴", "Copied — press ⌘V to paste", ja: "コピーしました。⌘V で貼り付け")) }
     }
 
     // MARK: 面板
@@ -158,7 +158,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func menuNeedsUpdate(_ menu: NSMenu) {
         menu.removeAllItems()
-        let open = NSMenuItem(title: L.t("搜索提示词…", "Search prompts…") + (settings.panelHotkey.map { "   \($0.display)" } ?? ""),
+        let open = NSMenuItem(title: L.t("搜索提示词…", "Search prompts…", ja: "プロンプトを検索…") + (settings.panelHotkey.map { "   \($0.display)" } ?? ""),
                               action: #selector(openPanelFromMenu), keyEquivalent: "")
         open.target = self
         menu.addItem(open)
@@ -166,24 +166,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
         let quick = store.sorted.prefix(8)
         if !quick.isEmpty {
-            let header = NSMenuItem(title: L.t("常用", "Frequent"), action: nil, keyEquivalent: ""); header.isEnabled = false
+            let header = NSMenuItem(title: L.t("常用", "Frequent", ja: "よく使う"), action: nil, keyEquivalent: ""); header.isEnabled = false
             menu.addItem(header)
             for p in quick {
                 let item = NSMenuItem(title: p.title + (p.hotkey.map { "   \($0.display)" } ?? ""), action: #selector(copyFromMenu(_:)), keyEquivalent: "")
                 item.target = self
                 item.representedObject = p.id
-                item.toolTip = L.t("点击复制", "Click to copy")
+                item.toolTip = L.t("点击复制", "Click to copy", ja: "クリックでコピー")
                 menu.addItem(item)
             }
             menu.addItem(.separator())
         }
-        for (title, section) in [(L.t("管理提示词…", "Manage prompts…"), AppSection.prompts), (L.t("提示词市场…", "Prompt market…"), AppSection.market), (L.t("设置…", "Settings…"), AppSection.settings)] {
+        for (title, section) in [(L.t("管理提示词…", "Manage prompts…", ja: "プロンプトを管理…"), AppSection.prompts), (L.t("提示词市场…", "Prompt market…", ja: "プロンプトマーケット…"), AppSection.market), (L.t("设置…", "Settings…", ja: "設定…"), AppSection.settings)] {
             let item = NSMenuItem(title: title, action: #selector(openSection(_:)), keyEquivalent: section == .settings ? "," : "")
             item.target = self; item.representedObject = section.rawValue
             menu.addItem(item)
         }
         menu.addItem(.separator())
-        let quit = NSMenuItem(title: L.t("退出 PasteKey", "Quit PasteKey"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        let quit = NSMenuItem(title: L.t("退出 PasteKey", "Quit PasteKey", ja: "PasteKey を終了"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         menu.addItem(quit)
     }
 
@@ -194,7 +194,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         if p.needsInput { showPanel(); panelModel.beginInput(for: p); return }
         PasteService.copy(TemplateRenderer.render(p.body, clipboard: NSPasteboard.general.string(forType: .string), input: nil))
         store.markUsed(id)
-        Toast.show(L.t("已复制「\(p.title)」", "Copied “\(p.title)”"))
+        Toast.show(L.t("已复制「\(p.title)」", "Copied “\(p.title)”", ja: "「\(p.title)」をコピーしました"))
     }
 
     @objc private func openSection(_ sender: NSMenuItem) {

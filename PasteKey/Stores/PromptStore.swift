@@ -113,7 +113,7 @@ final class PromptStore: ObservableObject {
         guard let data = UserDefaults.standard.data(forKey: "com.pastekey.snippets"),
               let old = try? JSONDecoder().decode([OldSnippet].self, from: data) else { return [] }
         return old.filter { !$0.content.isEmpty }.map { s in
-            Prompt(id: s.id, title: s.name.isEmpty ? L.t("未命名", "Untitled") : s.name, body: s.content,
+            Prompt(id: s.id, title: s.name.isEmpty ? L.t("未命名", "Untitled", ja: "無題") : s.name, body: s.content,
                    hotkey: s.isEnabled ? s.hotkey.map { KeyCombo(keyCode: $0.carbonKeyCode, modifiers: $0.carbonModifiers) } : nil)
         }
     }

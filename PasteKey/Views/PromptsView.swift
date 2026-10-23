@@ -9,8 +9,8 @@ struct PromptsView: View {
         HSplitView {
             VStack(spacing: 0) {
                 HStack {
-                    TextField(L.t("搜索", "Search"), text: $query).textFieldStyle(.roundedBorder)
-                    Button { newPrompt() } label: { Image(systemName: "plus") }.help(L.t("新建提示词", "New prompt"))
+                    TextField(L.t("搜索", "Search", ja: "検索"), text: $query).textFieldStyle(.roundedBorder)
+                    Button { newPrompt() } label: { Image(systemName: "plus") }.help(L.t("新建提示词", "New prompt", ja: "新しいプロンプト"))
                 }.padding(10)
                 List(selection: $nav.selectedPromptID) {
                     ForEach(store.search(query)) { p in
@@ -29,10 +29,10 @@ struct PromptsView: View {
                         }
                         .padding(.vertical, 3).tag(p.id)
                         .contextMenu {
-                            Button(p.favorite ? L.t("取消收藏", "Unfavorite") : L.t("收藏", "Favorite")) { store.toggleFavorite(p.id) }
-                            Button(L.t("复制", "Copy")) { PasteService.copy(p.body) }
+                            Button(p.favorite ? L.t("取消收藏", "Unfavorite", ja: "お気に入りから外す") : L.t("收藏", "Favorite", ja: "お気に入り")) { store.toggleFavorite(p.id) }
+                            Button(L.t("复制", "Copy", ja: "コピー")) { PasteService.copy(p.body) }
                             Divider()
-                            Button(L.t("删除", "Delete"), role: .destructive) { store.delete(p.id) }
+                            Button(L.t("删除", "Delete", ja: "削除"), role: .destructive) { store.delete(p.id) }
                         }
                     }
                 }
@@ -45,22 +45,22 @@ struct PromptsView: View {
                 } else {
                     VStack(spacing: 14) {
                         Image(systemName: "keyboard").font(.system(size: 38)).foregroundStyle(.tertiary)
-                        Text(L.t("选一条提示词来编辑，或者新建一条", "Pick a prompt to edit, or create one")).foregroundStyle(.secondary)
+                        Text(L.t("选一条提示词来编辑，或者新建一条", "Pick a prompt to edit, or create one", ja: "編集するプロンプトを選ぶか、新しく作成してください")).foregroundStyle(.secondary)
                         HStack {
-                            Button(L.t("新建提示词", "New prompt")) { newPrompt() }
-                            Button(L.t("逛逛提示词市场", "Browse the market")) { nav.section = .market }
+                            Button(L.t("新建提示词", "New prompt", ja: "新しいプロンプト")) { newPrompt() }
+                            Button(L.t("逛逛提示词市场", "Browse the market", ja: "マーケットを見る")) { nav.section = .market }
                         }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
             .frame(minWidth: 440)
         }
-        .navigationTitle(L.t("我的提示词", "My Prompts"))
+        .navigationTitle(L.t("我的提示词", "My Prompts", ja: "マイプロンプト"))
         .onAppear { if nav.selectedPromptID == nil { nav.selectedPromptID = store.sorted.first?.id } }
     }
 
     private func newPrompt() {
-        let p = Prompt(title: L.t("新提示词", "New prompt"), body: "")
+        let p = Prompt(title: L.t("新提示词", "New prompt", ja: "新しいプロンプト"), body: "")
         store.upsert(p)
         nav.selectedPromptID = p.id
     }
@@ -76,24 +76,24 @@ struct PromptEditor: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack {
-                TextField(L.t("标题", "Title"), text: $prompt.title).textFieldStyle(.plain).font(.system(size: 20, weight: .semibold))
+                TextField(L.t("标题", "Title", ja: "タイトル"), text: $prompt.title).textFieldStyle(.plain).font(.system(size: 20, weight: .semibold))
                 Spacer()
                 Button { prompt.favorite.toggle() } label: { Image(systemName: prompt.favorite ? "star.fill" : "star") }
-                    .buttonStyle(.plain).foregroundStyle(prompt.favorite ? .yellow : .secondary).help(L.t("收藏", "Favorite"))
+                    .buttonStyle(.plain).foregroundStyle(prompt.favorite ? .yellow : .secondary).help(L.t("收藏", "Favorite", ja: "お気に入り"))
             }
             HStack(spacing: 10) {
-                Label(L.t("快捷键", "Hotkey"), systemImage: "keyboard").font(.callout).foregroundStyle(.secondary)
+                Label(L.t("快捷键", "Hotkey", ja: "ショートカット"), systemImage: "keyboard").font(.callout).foregroundStyle(.secondary)
                 HotkeyRecorder(combo: Binding(get: { prompt.hotkey }, set: setHotkey))
                     .frame(width: 170, height: 26)
                 if prompt.hotkey != nil {
                     Button { prompt.hotkey = nil } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary) }.buttonStyle(.plain)
                 }
-                Text(conflict ?? L.t("按下就直接贴出这条，不用打开面板", "Pastes this prompt directly")).font(.caption)
+                Text(conflict ?? L.t("按下就直接贴出这条，不用打开面板", "Pastes this prompt directly", ja: "押すとこのプロンプトを直接貼り付けます")).font(.caption)
                     .foregroundStyle(conflict == nil ? Color.secondary : Color.orange)
             }
             HStack {
-                TextField(L.t("分类", "Category"), text: $prompt.category).textFieldStyle(.roundedBorder).frame(width: 160)
-                TextField(L.t("标签，用逗号分开", "Tags, comma separated"), text: $tagsText).textFieldStyle(.roundedBorder)
+                TextField(L.t("分类", "Category", ja: "カテゴリ"), text: $prompt.category).textFieldStyle(.roundedBorder).frame(width: 160)
+                TextField(L.t("标签，用逗号分开", "Tags, comma separated", ja: "タグ（カンマ区切り）"), text: $tagsText).textFieldStyle(.roundedBorder)
             }
             ZStack(alignment: .topLeading) {
                 TextEditor(text: $prompt.body)
@@ -101,24 +101,24 @@ struct PromptEditor: View {
                     .scrollContentBackground(.hidden)
                     .padding(10)
                 if prompt.body.isEmpty {
-                    Text(L.t("在这里写提示词。可以用 {{剪贴板}}、{{输入}} 这样的变量，粘贴时自动替换。", "Write your prompt. Variables like {{clipboard}} and {{input}} are filled in when pasting."))
+                    Text(L.t("在这里写提示词。可以用 {{剪贴板}}、{{输入}} 这样的变量，粘贴时自动替换。", "Write your prompt. Variables like {{clipboard}} and {{input}} are filled in when pasting.", ja: "ここにプロンプトを書きます。{{clipboard}} や {{input}} などの変数は貼り付け時に置き換わります。"))
                         .foregroundStyle(.tertiary).padding(15).allowsHitTesting(false)
                 }
             }
             .background(Color.primary.opacity(0.04))
             .clipShape(RoundedRectangle(cornerRadius: 8))
             HStack(spacing: 6) {
-                Text(L.t("插入变量：", "Insert:")).font(.caption).foregroundStyle(.secondary)
+                Text(L.t("插入变量：", "Insert:", ja: "変数を挿入：")).font(.caption).foregroundStyle(.secondary)
                 ForEach(TemplateVariable.allCases, id: \.self) { v in
                     Button(v.label) { prompt.body += v.insertToken }.controlSize(.small)
                 }
                 Spacer()
-                if prompt.useCount > 0 { Text(L.t("用过 \(prompt.useCount) 次", "Used \(prompt.useCount)×")).font(.caption).foregroundStyle(.secondary) }
+                if prompt.useCount > 0 { Text(L.t("用过 \(prompt.useCount) 次", "Used \(prompt.useCount)×", ja: "\(prompt.useCount) 回使用")).font(.caption).foregroundStyle(.secondary) }
             }
             HStack {
-                Button(L.t("删除", "Delete"), role: .destructive) { store.delete(prompt.id) }
+                Button(L.t("删除", "Delete", ja: "削除"), role: .destructive) { store.delete(prompt.id) }
                 Spacer()
-                Button(copied ? L.t("已复制", "Copied") : L.t("复制", "Copy")) {
+                Button(copied ? L.t("已复制", "Copied", ja: "コピーしました") : L.t("复制", "Copy", ja: "コピー")) {
                     PasteService.copy(TemplateRenderer.render(prompt.body, clipboard: NSPasteboard.general.string(forType: .string), input: nil))
                     copied = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { copied = false }
@@ -136,7 +136,7 @@ struct PromptEditor: View {
     private func setHotkey(_ combo: KeyCombo?) {
         conflict = nil
         if let combo, let other = store.owner(of: combo, except: prompt.id) {
-            conflict = L.t("「\(other.title)」已经在用 \(combo.display)", "\(combo.display) is used by “\(other.title)”")
+            conflict = L.t("「\(other.title)」已经在用 \(combo.display)", "\(combo.display) is used by “\(other.title)”", ja: "\(combo.display) は「\(other.title)」で使われています")
             return
         }
         prompt.hotkey = combo

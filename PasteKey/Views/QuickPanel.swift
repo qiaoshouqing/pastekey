@@ -91,7 +91,7 @@ struct QuickPanelView: View {
         VStack(spacing: 0) {
             HStack(spacing: 10) {
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary).font(.system(size: 17))
-                TextField(L.t("搜索提示词", "Search prompts"), text: $model.query)
+                TextField(L.t("搜索提示词", "Search prompts", ja: "プロンプトを検索"), text: $model.query)
                     .textFieldStyle(.plain).font(.system(size: 20)).focused($searchFocused)
                     .onSubmit { model.choose(paste: true) }
             }
@@ -102,8 +102,8 @@ struct QuickPanelView: View {
                 VStack(spacing: 8) {
                     Spacer()
                     Image(systemName: "text.quote").font(.system(size: 30)).foregroundStyle(.tertiary)
-                    Text(L.t("没有找到提示词", "No prompts found")).foregroundStyle(.secondary)
-                    Button(L.t("去提示词市场挑几个", "Browse the prompt market")) { model.onOpenApp?(.market) }.buttonStyle(.link)
+                    Text(L.t("没有找到提示词", "No prompts found", ja: "プロンプトが見つかりません")).foregroundStyle(.secondary)
+                    Button(L.t("去提示词市场挑几个", "Browse the prompt market", ja: "プロンプトマーケットを見る")) { model.onOpenApp?(.market) }.buttonStyle(.link)
                     Spacer()
                 }.frame(maxWidth: .infinity)
             } else {
@@ -122,12 +122,12 @@ struct QuickPanelView: View {
             }
             Divider()
             HStack(spacing: 14) {
-                Hint(keys: "↩", text: model.settings.autoPaste ? L.t("粘贴", "Paste") : L.t("复制", "Copy"))
-                Hint(keys: "⌘↩", text: L.t("只复制", "Copy only"))
-                Hint(keys: "↑↓", text: L.t("选择", "Select"))
-                Hint(keys: "esc", text: L.t("关闭", "Close"))
+                Hint(keys: "↩", text: model.settings.autoPaste ? L.t("粘贴", "Paste", ja: "貼り付け") : L.t("复制", "Copy", ja: "コピー"))
+                Hint(keys: "⌘↩", text: L.t("只复制", "Copy only", ja: "コピーのみ"))
+                Hint(keys: "↑↓", text: L.t("选择", "Select", ja: "選択"))
+                Hint(keys: "esc", text: L.t("关闭", "Close", ja: "閉じる"))
                 Spacer()
-                Button { model.onOpenApp?(.prompts) } label: { Label(L.t("管理提示词", "Manage"), systemImage: "square.grid.2x2") }
+                Button { model.onOpenApp?(.prompts) } label: { Label(L.t("管理提示词", "Manage", ja: "管理"), systemImage: "square.grid.2x2") }
                     .buttonStyle(.plain).foregroundStyle(.secondary).font(.caption)
             }
             .padding(.horizontal, 16).padding(.vertical, 9)
@@ -142,17 +142,17 @@ struct QuickPanelView: View {
                 Text(p.title).font(.headline)
                 Spacer()
             }
-            Text(L.t("这条提示词里有「{{输入}}」，先填上要放进去的内容：", "This prompt has an {{input}} slot. Fill it in:"))
+            Text(L.t("这条提示词里有「{{输入}}」，先填上要放进去的内容：", "This prompt has an {{input}} slot. Fill it in:", ja: "このプロンプトには {{input}} があります。入れる内容を入力してください："))
                 .font(.callout).foregroundStyle(.secondary)
             TextEditor(text: $model.inputText)
                 .font(.system(size: 15)).focused($inputFocused)
                 .scrollContentBackground(.hidden)
                 .padding(8).background(Color.primary.opacity(0.05)).clipShape(RoundedRectangle(cornerRadius: 8))
             HStack {
-                Text(L.t("⌘↩ 粘贴   esc 返回", "⌘↩ paste   esc back")).font(.caption).foregroundStyle(.secondary)
+                Text(L.t("⌘↩ 粘贴   esc 返回", "⌘↩ paste   esc back", ja: "⌘↩ 貼り付け   esc 戻る")).font(.caption).foregroundStyle(.secondary)
                 Spacer()
-                Button(L.t("只复制", "Copy")) { model.confirmInput(paste: false) }
-                Button(L.t("粘贴", "Paste")) { model.confirmInput(paste: true) }.buttonStyle(.borderedProminent)
+                Button(L.t("只复制", "Copy", ja: "コピー")) { model.confirmInput(paste: false) }
+                Button(L.t("粘贴", "Paste", ja: "貼り付け")) { model.confirmInput(paste: true) }.buttonStyle(.borderedProminent)
             }
         }
         .padding(18)

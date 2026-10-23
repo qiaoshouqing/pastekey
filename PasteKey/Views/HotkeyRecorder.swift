@@ -5,7 +5,7 @@ import Carbon.HIToolbox
 /// 点一下开始录，按下组合键就记下；Esc 取消，Delete 清除
 struct HotkeyRecorder: NSViewRepresentable {
     @Binding var combo: KeyCombo?
-    var placeholder: String = L.t("点击录制快捷键", "Click to record")
+    var placeholder: String = L.t("点击录制快捷键", "Click to record", ja: "クリックして記録")
 
     func makeNSView(context: Context) -> RecorderView {
         let v = RecorderView()
@@ -38,7 +38,7 @@ struct HotkeyRecorder: NSViewRepresentable {
             (recording ? NSColor.controlAccentColor : NSColor.separatorColor).setStroke()
             path.lineWidth = recording ? 1.5 : 1
             path.stroke()
-            let text = recording ? L.t("请按下组合键…", "Press keys…") : (combo?.display ?? placeholder)
+            let text = recording ? L.t("请按下组合键…", "Press keys…", ja: "キーを押してください…") : (combo?.display ?? placeholder)
             let color: NSColor = recording ? .controlAccentColor : (combo == nil ? .secondaryLabelColor : .labelColor)
             let attrs: [NSAttributedString.Key: Any] = [.font: NSFont.systemFont(ofSize: 12, weight: combo == nil ? .regular : .semibold), .foregroundColor: color]
             let s = NSAttributedString(string: text, attributes: attrs)
