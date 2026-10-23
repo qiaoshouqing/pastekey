@@ -1,0 +1,35 @@
+{
+  "privacyPolicyUrl": "https://github.com/qiaoshouqing/pastekey/blob/main/PRIVACY.md",
+  "supportUrl": "https://github.com/qiaoshouqing/pastekey/issues",
+  "marketingUrl": "https://github.com/qiaoshouqing/pastekey",
+  "locales": {
+    "en-US": {
+      "name": "PasteKey - Prompt Hotkeys",
+      "subtitle": "Paste AI prompts with one key",
+      "promo": "Press Option-Space in any app, find a prompt, press Return. 24 hand-picked prompts included.",
+      "kw": "prompt,AI,hotkey,snippet,text expander,paste,template,shortcut,LLM,productivity,writing,coding",
+      "desc": "PasteKey keeps your best AI prompts one keystroke away.\n\nPress Option-Space in any app (a chat window, your code editor, a document) and a search panel opens. Type a few letters, press Return, and the prompt is pasted right where your cursor was. Works with ChatGPT, Claude, Gemini, Cursor and any other app you type into.\n\nONE HOTKEY PER PROMPT\nGive your favorite prompts their own shortcut, like Control-Option-1. Press it and the text is pasted instantly, no panel needed.\n\nA PROMPT MARKET, BUILT IN\nStart with 24 hand-picked prompts for research, writing, coding, work, learning, social media and translation. Add any of them with one click and edit them to fit your style. New prompts arrive automatically.\n\nVARIABLES\nWrite {{clipboard}}, {{input}}, {{date}} or {{time}} in a prompt. The clipboard and date are filled in for you; {{input}} asks for a line of text before pasting.\n\nKEEPS YOUR CLIPBOARD\nAfter pasting, PasteKey puts back whatever you had copied before.\n\nPRIVATE BY DESIGN\nYour prompts stay on your Mac. No account, no tracking, no ads. Export and import your library as a JSON file any time.\n\nAvailable in English, Simplified Chinese, Traditional Chinese and Japanese."
+    },
+    "zh-Hans": {
+      "name": "PasteKey - 提示词快捷键",
+      "subtitle": "一个键，把提示词贴进任何 App",
+      "promo": "在任何 App 里按 Option + 空格，搜到提示词，回车就贴。内置 24 条精选提示词。",
+      "kw": "提示词,AI,快捷键,文本片段,粘贴,模板,效率,Prompt,写作,编程,翻译,大模型",
+      "desc": "PasteKey 让你攒下的好提示词，一个键就能用上。\n\n在任何 App 里按 Option + 空格：聊天窗口、代码编辑器、文档都行。弹出搜索面板，输几个字，回车，提示词就贴到光标所在的位置。ChatGPT、Claude、Gemini、Cursor，凡是能打字的地方都能用。\n\n每条提示词都能绑快捷键\n最常用的几条，设成 Control + Option + 1 这样的组合键，按下直接贴出去，不用开面板。\n\n自带提示词市场\n内置 24 条精选提示词，分研究、写作、编程、职场、学习、自媒体、翻译 7 类。一键添加，随便改成你自己的风格。新的提示词会自动更新进来。\n\n变量\n提示词里写 {{剪贴板}}、{{输入}}、{{日期}}、{{时间}}。剪贴板和日期自动填好；{{输入}} 会在粘贴前让你现填一句。\n\n不弄乱剪贴板\n贴完之后，自动把你原来复制的内容还回去。\n\n数据在自己手里\n提示词只存在你的 Mac 上。不用注册，没有追踪，没有广告。随时导出、导入成 JSON 文件。\n\n支持简体中文、繁体中文、英语、日语。"
+    },
+    "ja": {
+      "name": "PasteKey - プロンプトショートカット",
+      "subtitle": "AIプロンプトをワンキーで貼り付け",
+      "promo": "どのアプリでも Option + Space でプロンプトを検索し、Return で貼り付け。厳選プロンプト 24 本入り。",
+      "kw": "プロンプト,AI,ショートカット,スニペット,貼り付け,テンプレート,効率化,生成AI,文章,プログラミング,翻訳",
+      "desc": "PasteKey は、お気に入りの AI プロンプトをワンキーで呼び出せるアプリです。\n\nチャット画面、コードエディタ、ドキュメントなど、どのアプリでも Option + Space を押すと検索パネルが開きます。数文字入力して Return を押せば、カーソルの位置にプロンプトが貼り付けられます。ChatGPT、Claude、Gemini、Cursor など、文字を入力できるアプリならどこでも使えます。\n\nプロンプトごとのショートカット\nよく使うプロンプトに Control + Option + 1 のようなショートカットを割り当てれば、パネルを開かずにすぐ貼り付けられます。\n\nプロンプトマーケットを内蔵\nリサーチ、文章、プログラミング、仕事、学習、SNS 発信、翻訳の 7 カテゴリ、厳選プロンプト 24 本を収録。ワンクリックで追加して、自分好みに編集できます。新しいプロンプトは自動で届きます。\n\n変数\n{{clipboard}}・{{input}}・{{date}}・{{time}} をプロンプトに書くと、貼り付け時に置き換わります。{{input}} は貼り付け前に入力を求めます。\n\nクリップボードを保持\n貼り付けたあと、元のクリップボードの内容を戻します。\n\nプライバシー重視\nプロンプトはお使いの Mac にだけ保存されます。アカウント不要、トラッキングや広告はありません。JSON でいつでも書き出し・読み込みできます。\n\n英語・簡体字中国語・繁体字中国語・日本語に対応。"
+    },
+    "zh-Hant": {
+      "name": "PasteKey - 提示詞快速鍵",
+      "subtitle": "一個鍵，把提示詞貼進任何 App",
+      "promo": "在任何 App 里按 Option + 空格，搜到提示詞，回車就貼。內置 24 條精選提示詞。",
+      "kw": "提示詞,AI,快速鍵,文字片段,貼上,模板,效率,Prompt,寫作,程式設計,翻譯,大模型",
+      "desc": "PasteKey 讓你攢下的好提示詞，一個鍵就能用上。\n\n在任何 App 里按 Option + 空格：聊天窗口、程式碼編輯器、文檔都行。彈出搜尋面板，輸幾個字，回車，提示詞就貼到光標所在的位置。ChatGPT、Claude、Gemini、Cursor，凡是能打字的地方都能用。\n\n每條提示詞都能綁快速鍵\n最常用的幾條，設成 Control + Option + 1 這樣的組合鍵，按下直接貼出去，不用開面板。\n\n自帶提示詞市場\n內置 24 條精選提示詞，分研究、寫作、程式設計、職場、學習、自媒體、翻譯 7 類。一鍵添加，隨便改成你自己的風格。新的提示詞會自動更新進來。\n\n變量\n提示詞里寫 {{剪貼簿}}、{{輸入}}、{{日期}}、{{時間}}。剪貼簿和日期自動填好；{{輸入}} 會在貼上前讓你現填一句。\n\n不弄亂剪貼簿\n貼完之後，自動把你原來複製的內容還回去。\n\n資料在自己手裡\n提示詞只存在你的 Mac 上。不用註冊，沒有追蹤，沒有廣告。隨時匯出、匯入成 JSON 檔案。\n\n支援簡體中文、繁體中文、英語、日語。"
+    }
+  }
+}
