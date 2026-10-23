@@ -10,7 +10,7 @@ _Last updated: October 23, 2026 · POMODIARY LLC_
 - PasteKey has no accounts, no tracking, no ads and no third-party SDKs.
 - Accessibility permission, if you grant it, is used only to press ⌘V in the app you are pasting into.
 
-Questions: open an issue at https://github.com/qiaoshouqing/pastekey/issues or email support@pomodiary.com.
+Questions: open an issue at https://github.com/qiaoshouqing/pastekey/issues.
 
 ---
 
