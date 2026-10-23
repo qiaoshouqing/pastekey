@@ -34,7 +34,7 @@ final class MarketStore: ObservableObject {
         return catalog.prompts.filter { p in
             (category == nil || p.category == category)
                 && (q.isEmpty || p.title.value.lowercased().contains(q) || p.summary.value.lowercased().contains(q)
-                    || p.body.value.lowercased().contains(q) || (p.tags.zh + (p.tags.en ?? [])).contains { $0.lowercased().contains(q) })
+                    || p.body.value.lowercased().contains(q) || p.tags.all.contains { $0.lowercased().contains(q) })
         }
         .sorted { ($0.featured ?? false ? 1 : 0) > ($1.featured ?? false ? 1 : 0) }
     }
@@ -55,7 +55,7 @@ final class MarketStore: ObservableObject {
             }
             lastError = nil
         } catch {
-            lastError = L.t("暂时连不上市场，先显示本地的提示词", "Couldn't reach the market. Showing the built-in prompts.")
+            lastError = L.t("暂时连不上市场，先显示本地的提示词", "Couldn't reach the market. Showing the built-in prompts.", ja: "マーケットに接続できません。内蔵のプロンプトを表示しています。")
         }
     }
 }

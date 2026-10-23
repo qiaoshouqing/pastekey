@@ -1,12 +1,13 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "2026-10-23",
   "categories": [
     {
       "id": "research",
       "name": {
         "zh": "研究与思考",
-        "en": "Research & Thinking"
+        "en": "Research & Thinking",
+        "ja": "リサーチと思考"
       },
       "icon": "brain.head.profile"
     },
@@ -14,7 +15,8 @@
       "id": "writing",
       "name": {
         "zh": "写作",
-        "en": "Writing"
+        "en": "Writing",
+        "ja": "文章"
       },
       "icon": "pencil.and.outline"
     },
@@ -22,7 +24,8 @@
       "id": "coding",
       "name": {
         "zh": "编程",
-        "en": "Coding"
+        "en": "Coding",
+        "ja": "プログラミング"
       },
       "icon": "chevron.left.forwardslash.chevron.right"
     },
@@ -30,7 +33,8 @@
       "id": "work",
       "name": {
         "zh": "职场与效率",
-        "en": "Work"
+        "en": "Work",
+        "ja": "仕事"
       },
       "icon": "briefcase"
     },
@@ -38,7 +42,8 @@
       "id": "learning",
       "name": {
         "zh": "学习",
-        "en": "Learning"
+        "en": "Learning",
+        "ja": "学習"
       },
       "icon": "graduationcap"
     },
@@ -46,7 +51,8 @@
       "id": "social",
       "name": {
         "zh": "自媒体",
-        "en": "Social Media"
+        "en": "Social Media",
+        "ja": "SNS 発信"
       },
       "icon": "megaphone"
     },
@@ -54,7 +60,8 @@
       "id": "translate",
       "name": {
         "zh": "翻译与语言",
-        "en": "Translation"
+        "en": "Translation",
+        "ja": "翻訳と語学"
       },
       "icon": "character.bubble"
     }
@@ -65,15 +72,18 @@
       "category": "research",
       "title": {
         "zh": "要更深，不要更大",
-        "en": "Go deeper, not bigger"
+        "en": "Go deeper, not bigger",
+        "ja": "深さを、大きさより"
       },
       "summary": {
         "zh": "让 AI 先想清楚顶尖专家会怎么做，再重写你的问题。适合研究、方案、写作前的提问。",
-        "en": "Make the AI think like a top expert first, then rewrite your request."
+        "en": "Make the AI think like a top expert first, then rewrite your request.",
+        "ja": "まず一流の専門家ならどうするかを考えさせてから、あなたの依頼を書き直します。"
       },
       "body": {
         "zh": "我想要的是一个更深入的版本，而不是一个更大的版本。\n\n在重写题目之前：\n1. 请说明该领域的顶尖专家会做哪些我没有要求的事情；\n2. 请列出他们会从哪些最原始的素材入手，而不是我已经整理好的素材；\n3. 请列出他们会使用的具体方法和工具；\n4. 除了你我之外，还有什么可以证明结果是正确的。\n\n然后，请修改我的题目，使其完全符合上述要求。\n\n我的题目：{{剪贴板}}",
-        "en": "I want a deeper version, not a bigger one.\n\nBefore rewriting my request:\n1. Explain what a top expert in this field would do that I didn't ask for.\n2. List the raw, primary sources they would start from, instead of the material I've already prepared.\n3. List the specific methods and tools they would use.\n4. Besides you and me, what could prove the result is correct?\n\nThen rewrite my request so it fully meets the above.\n\nMy request: {{clipboard}}"
+        "en": "I want a deeper version, not a bigger one.\n\nBefore rewriting my request:\n1. Explain what a top expert in this field would do that I didn't ask for.\n2. List the raw, primary sources they would start from, instead of the material I've already prepared.\n3. List the specific methods and tools they would use.\n4. Besides you and me, what could prove the result is correct?\n\nThen rewrite my request so it fully meets the above.\n\nMy request: {{clipboard}}",
+        "ja": "ほしいのは「より大きい」版ではなく、「より深い」版です。\n\n依頼を書き直す前に：\n1. この分野の一流の専門家なら、私が頼んでいないけれどやることを説明してください。\n2. 私がすでに整理した資料ではなく、専門家が手をつける一次資料を挙げてください。\n3. 専門家が使う具体的な方法とツールを挙げてください。\n4. あなたと私以外に、結果が正しいことを示せるものは何ですか。\n\nそのうえで、上の条件を完全に満たすように私の依頼を書き直してください。\n\n私の依頼：{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -85,6 +95,11 @@
           "deep dive",
           "prompting",
           "research"
+        ],
+        "ja": [
+          "深掘り",
+          "質問力",
+          "リサーチ"
         ]
       },
       "featured": true
@@ -94,15 +109,18 @@
       "category": "research",
       "title": {
         "zh": "请一位专家给我讲明白",
-        "en": "Explain it like an expert to a newcomer"
+        "en": "Explain it like an expert to a newcomer",
+        "ja": "専門家にわかりやすく教えてもらう"
       },
       "summary": {
         "zh": "任何概念，先给一句话，再给类比、例子和常见误解。",
-        "en": "One-line answer, then analogy, example and common misconceptions."
+        "en": "One-line answer, then analogy, example and common misconceptions.",
+        "ja": "一言の答え、たとえ話、具体例、よくある誤解の順に説明。"
       },
       "body": {
         "zh": "请用这个领域资深专家的视角，给一个聪明但完全外行的人讲清楚：{{输入}}\n\n按这个结构回答：\n1. 一句话说清它是什么\n2. 一个生活里的类比\n3. 一个具体例子，最好带数字\n4. 外行最常见的两个误解\n5. 如果只想再多懂一点，下一步该看什么",
-        "en": "From the perspective of a seasoned expert, explain this to a smart person who knows nothing about it: {{input}}\n\nStructure:\n1. One sentence on what it is\n2. An everyday analogy\n3. A concrete example, ideally with numbers\n4. The two most common misconceptions\n5. What to read next to go one level deeper"
+        "en": "From the perspective of a seasoned expert, explain this to a smart person who knows nothing about it: {{input}}\n\nStructure:\n1. One sentence on what it is\n2. An everyday analogy\n3. A concrete example, ideally with numbers\n4. The two most common misconceptions\n5. What to read next to go one level deeper",
+        "ja": "その道のベテランの視点で、賢いけれどまったくの素人に説明してください：{{input}}\n\nこの構成で：\n1. それが何かを一文で\n2. 身近なたとえ話\n3. 具体例（できれば数字つき）\n4. 素人がよくする誤解を二つ\n5. もう一歩理解を深めるなら次に何を読むか"
       },
       "tags": {
         "zh": [
@@ -112,6 +130,10 @@
         "en": [
           "explain",
           "basics"
+        ],
+        "ja": [
+          "解説",
+          "入門"
         ]
       },
       "featured": false
@@ -121,15 +143,18 @@
       "category": "research",
       "title": {
         "zh": "反方律师",
-        "en": "Devil's advocate"
+        "en": "Devil's advocate",
+        "ja": "反対側の弁護士"
       },
       "summary": {
         "zh": "让 AI 认真反驳你的观点，找出最强的反对理由。",
-        "en": "Get the strongest case against your idea."
+        "en": "Get the strongest case against your idea.",
+        "ja": "あなたの意見に本気で反論し、最も強い反対理由を見つけます。"
       },
       "body": {
         "zh": "下面是我的观点或计划。请扮演一位聪明、认真的反对者：\n1. 给出 3 个最有力的反对理由，按杀伤力排序\n2. 每个理由说明：在什么情况下它成立，我该怎么验证\n3. 指出我可能没意识到的一个隐含假设\n4. 最后告诉我：如果只改一处，改哪里能让这个观点更站得住\n\n我的观点：\n{{剪贴板}}",
-        "en": "Here is my view or plan. Act as a smart, serious opponent:\n1. Give the 3 strongest objections, ranked by impact\n2. For each: when does it hold, and how can I test it\n3. Point out one hidden assumption I may have missed\n4. Finally: if I change only one thing, what makes this hold up best\n\nMy view:\n{{clipboard}}"
+        "en": "Here is my view or plan. Act as a smart, serious opponent:\n1. Give the 3 strongest objections, ranked by impact\n2. For each: when does it hold, and how can I test it\n3. Point out one hidden assumption I may have missed\n4. Finally: if I change only one thing, what makes this hold up best\n\nMy view:\n{{clipboard}}",
+        "ja": "以下は私の意見または計画です。賢く真剣な反対者になってください：\n1. 最も強い反対理由を三つ、影響の大きい順に\n2. それぞれ、どんな条件で成り立つか、どう検証できるか\n3. 私が気づいていない前提を一つ\n4. 最後に、一か所だけ変えるならどこを変えれば一番強くなるか\n\n私の意見：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -139,6 +164,10 @@
         "en": [
           "critical thinking",
           "decisions"
+        ],
+        "ja": [
+          "批判的思考",
+          "意思決定"
         ]
       },
       "featured": false
@@ -148,15 +177,18 @@
       "category": "research",
       "title": {
         "zh": "第一性原理拆解",
-        "en": "First-principles breakdown"
+        "en": "First-principles breakdown",
+        "ja": "第一原理で分解する"
       },
       "summary": {
         "zh": "把一个问题拆到不能再拆，再从头搭出解法。",
-        "en": "Break a problem down to fundamentals and rebuild a solution."
+        "en": "Break a problem down to fundamentals and rebuild a solution.",
+        "ja": "問題を分解しきってから、ゼロから解決策を組み立てます。"
       },
       "body": {
         "zh": "用第一性原理分析这个问题：{{输入}}\n\n1. 列出大家通常怎么想这个问题（行业惯例、默认做法）\n2. 把它拆成最基本的事实和约束，每一条都标明是「物理/数学上必然的」还是「习惯上如此的」\n3. 只保留必然的那些，从零重新推一个解法\n4. 对比新解法和惯例，差别在哪，代价是什么",
-        "en": "Analyze this from first principles: {{input}}\n\n1. How people usually think about it (conventions, defaults)\n2. Break it into fundamental facts and constraints; mark each as \"necessarily true\" or \"true by habit\"\n3. Keep only the necessary ones and rebuild a solution from scratch\n4. Compare with the convention: what's different and what does it cost"
+        "en": "Analyze this from first principles: {{input}}\n\n1. How people usually think about it (conventions, defaults)\n2. Break it into fundamental facts and constraints; mark each as \"necessarily true\" or \"true by habit\"\n3. Keep only the necessary ones and rebuild a solution from scratch\n4. Compare with the convention: what's different and what does it cost",
+        "ja": "この問題を第一原理で分析してください：{{input}}\n\n1. ふつうはどう考えられているか（業界の慣習、当たり前のやり方）\n2. 基本的な事実と制約に分解し、それぞれ「必ず成り立つもの」か「習慣でそうなっているもの」かを示す\n3. 必ず成り立つものだけを残し、ゼロから解決策を導く\n4. 慣習との違いと、その代償"
       },
       "tags": {
         "zh": [
@@ -164,6 +196,9 @@
         ],
         "en": [
           "mental models"
+        ],
+        "ja": [
+          "思考法"
         ]
       },
       "featured": false
@@ -173,15 +208,18 @@
       "category": "research",
       "title": {
         "zh": "帮我做决定",
-        "en": "Help me decide"
+        "en": "Help me decide",
+        "ja": "決めるのを手伝って"
       },
       "summary": {
         "zh": "列出选项、标准和权重，给出推荐和翻盘条件。",
-        "en": "Options, criteria, weights, a recommendation, and what would change it."
+        "en": "Options, criteria, weights, a recommendation, and what would change it.",
+        "ja": "選択肢・基準・重みを並べ、おすすめと判断が変わる条件を示します。"
       },
       "body": {
         "zh": "我在纠结：{{输入}}\n\n请帮我：\n1. 把所有选项列出来（包括我可能没想到的第三条路）\n2. 列出 4~6 个判断标准，并按对我的重要程度给权重\n3. 用表格给每个选项打分，算出加权结果\n4. 给出你的推荐\n5. 说明什么新信息出现时，你的推荐会改变",
-        "en": "I'm torn about: {{input}}\n\nPlease:\n1. List all options (including a third path I may have missed)\n2. List 4–6 criteria and weight them by importance to me\n3. Score each option in a table and compute weighted totals\n4. Give your recommendation\n5. Say what new information would change it"
+        "en": "I'm torn about: {{input}}\n\nPlease:\n1. List all options (including a third path I may have missed)\n2. List 4–6 criteria and weight them by importance to me\n3. Score each option in a table and compute weighted totals\n4. Give your recommendation\n5. Say what new information would change it",
+        "ja": "迷っていること：{{input}}\n\nお願い：\n1. 選択肢をすべて挙げる（思いついていない第三の道も含めて）\n2. 判断基準を4〜6個挙げ、私にとっての重要度で重みをつける\n3. 表で各選択肢を採点し、加重合計を出す\n4. あなたのおすすめ\n5. どんな新しい情報が出たらおすすめが変わるか"
       },
       "tags": {
         "zh": [
@@ -191,6 +229,10 @@
         "en": [
           "decisions",
           "table"
+        ],
+        "ja": [
+          "意思決定",
+          "表"
         ]
       },
       "featured": false
@@ -200,15 +242,18 @@
       "category": "writing",
       "title": {
         "zh": "润色这段文字",
-        "en": "Polish this text"
+        "en": "Polish this text",
+        "ja": "この文章を推敲"
       },
       "summary": {
         "zh": "保留原意和语气，改得更顺、更短、更好懂。",
-        "en": "Keep the meaning and voice; make it clearer and tighter."
+        "en": "Keep the meaning and voice; make it clearer and tighter.",
+        "ja": "意味と口調はそのままに、読みやすく短くします。"
       },
       "body": {
         "zh": "请润色下面这段文字：\n- 保留原意和我的语气，不要改得像官方公文\n- 删掉重复和废话，长句拆短\n- 不要用「不是……而是……」这类套话\n- 改完后列出你改动最大的 3 处，并说明原因\n\n原文：\n{{剪贴板}}",
-        "en": "Polish the text below:\n- Keep the meaning and my voice; don't make it sound corporate\n- Cut repetition and filler; split long sentences\n- Avoid clichés like \"it's not X, it's Y\"\n- Afterwards, list the 3 biggest changes and why\n\nText:\n{{clipboard}}"
+        "en": "Polish the text below:\n- Keep the meaning and my voice; don't make it sound corporate\n- Cut repetition and filler; split long sentences\n- Avoid clichés like \"it's not X, it's Y\"\n- Afterwards, list the 3 biggest changes and why\n\nText:\n{{clipboard}}",
+        "ja": "以下の文章を推敲してください：\n- 意味と私の口調は残し、お役所っぽくしない\n- 重複と無駄を削り、長い文は分ける\n- 決まり文句は使わない\n- 最後に、大きく変えた箇所を三つ挙げて理由を説明\n\n文章：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -218,6 +263,10 @@
         "en": [
           "polish",
           "rewrite"
+        ],
+        "ja": [
+          "推敲",
+          "書き直し"
         ]
       },
       "featured": true
@@ -227,15 +276,18 @@
       "category": "writing",
       "title": {
         "zh": "起 10 个标题",
-        "en": "10 headline ideas"
+        "en": "10 headline ideas",
+        "ja": "タイトル案を10個"
       },
       "summary": {
         "zh": "给文章起标题：要有钩子、有数字、有「我」。",
-        "en": "Headlines with a hook, a number, and a personal angle."
+        "en": "Headlines with a hook, a number, and a personal angle.",
+        "ja": "引きがあって、数字があって、一人称のタイトル。"
       },
       "body": {
         "zh": "为下面这篇文章起 10 个标题。\n要求：\n- 每个标题都要有一个让人想点开的钩子\n- 至少一半包含具体数字\n- 用第一人称「我」讲真实经历的风格\n- 不要标题党到失真，不要用「震惊」「必看」\n- 最后推荐其中最好的 1 个，说明理由\n\n文章：\n{{剪贴板}}",
-        "en": "Write 10 headlines for the article below.\n- Each needs a hook that makes people click\n- At least half include a specific number\n- First-person, real-experience style\n- No misleading clickbait\n- Recommend the best one and explain why\n\nArticle:\n{{clipboard}}"
+        "en": "Write 10 headlines for the article below.\n- Each needs a hook that makes people click\n- At least half include a specific number\n- First-person, real-experience style\n- No misleading clickbait\n- Recommend the best one and explain why\n\nArticle:\n{{clipboard}}",
+        "ja": "以下の記事のタイトルを10個考えてください。\n- どれも思わずクリックしたくなる引きを入れる\n- 半分以上に具体的な数字を入れる\n- 一人称で実体験を語るスタイル\n- 誇張しすぎない\n- 最後に一番いいものを一つ選び、理由を説明\n\n記事：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -245,6 +297,10 @@
         "en": [
           "headlines",
           "blog"
+        ],
+        "ja": [
+          "タイトル",
+          "ブログ"
         ]
       },
       "featured": false
@@ -254,15 +310,18 @@
       "category": "writing",
       "title": {
         "zh": "先列提纲再写",
-        "en": "Outline first"
+        "en": "Outline first",
+        "ja": "まず構成を作る"
       },
       "summary": {
         "zh": "给一个主题，先出结构清楚的提纲，再按提纲写。",
-        "en": "Get a clear outline before drafting."
+        "en": "Get a clear outline before drafting.",
+        "ja": "書き始める前に、わかりやすい構成を作ります。"
       },
       "body": {
         "zh": "我要写一篇关于「{{输入}}」的文章，读者是：（在这里写读者是谁）\n\n请先给我一份提纲：\n1. 开头用什么具体场景或数字抓人\n2. 3~5 个小节，每节一句话说清要点\n3. 每节需要什么素材或例子（我要去找的）\n4. 结尾用什么画面收住，不要升华式总结\n\n提纲确认后再写正文。",
-        "en": "I'm writing an article about \"{{input}}\". The readers are: (describe them here)\n\nFirst give me an outline:\n1. What concrete scene or number opens it\n2. 3–5 sections, one line each\n3. What material or examples each section needs (that I should go find)\n4. What image to end on, no grand summary\n\nWrite the full draft only after I approve the outline."
+        "en": "I'm writing an article about \"{{input}}\". The readers are: (describe them here)\n\nFirst give me an outline:\n1. What concrete scene or number opens it\n2. 3–5 sections, one line each\n3. What material or examples each section needs (that I should go find)\n4. What image to end on, no grand summary\n\nWrite the full draft only after I approve the outline.",
+        "ja": "「{{input}}」についての記事を書きます。読者は：（ここに読者像を書く）\n\nまず構成をください：\n1. 冒頭でどんな具体的な場面や数字で引きつけるか\n2. 3〜5個の見出しと、それぞれ一行の要点\n3. 各見出しに必要な材料や例（私が探すもの）\n4. どんな場面で締めるか（大げさなまとめはしない）\n\n構成を確認してから本文を書いてください。"
       },
       "tags": {
         "zh": [
@@ -272,6 +331,10 @@
         "en": [
           "outline",
           "writing"
+        ],
+        "ja": [
+          "構成",
+          "文章"
         ]
       },
       "featured": false
@@ -281,15 +344,18 @@
       "category": "writing",
       "title": {
         "zh": "砍到一半长",
-        "en": "Cut it in half"
+        "en": "Cut it in half",
+        "ja": "半分の長さに"
       },
       "summary": {
         "zh": "同样的意思，字数砍一半。",
-        "en": "Same message, half the length."
+        "en": "Same message, half the length.",
+        "ja": "同じ内容を、半分の文字数で。"
       },
       "body": {
         "zh": "把下面的文字压缩到原来一半左右的长度。\n要求：保留所有关键信息和数字，删掉修饰、重复和铺垫，读起来依然自然。\n\n{{剪贴板}}",
-        "en": "Shorten the text below to about half its length.\nKeep every key fact and number; cut adjectives, repetition and build-up; it should still read naturally.\n\n{{clipboard}}"
+        "en": "Shorten the text below to about half its length.\nKeep every key fact and number; cut adjectives, repetition and build-up; it should still read naturally.\n\n{{clipboard}}",
+        "ja": "以下の文章を、元の半分くらいの長さにしてください。\n重要な情報と数字はすべて残し、飾りや重複、前置きを削り、自然に読めるようにしてください。\n\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -297,6 +363,9 @@
         ],
         "en": [
           "concise"
+        ],
+        "ja": [
+          "簡潔に"
         ]
       },
       "featured": false
@@ -306,15 +375,18 @@
       "category": "coding",
       "title": {
         "zh": "帮我审代码",
-        "en": "Review my code"
+        "en": "Review my code",
+        "ja": "コードをレビューして"
       },
       "summary": {
         "zh": "按严重程度列出 bug、风险和可以简化的地方。",
-        "en": "Bugs, risks and simplifications, ranked by severity."
+        "en": "Bugs, risks and simplifications, ranked by severity.",
+        "ja": "バグ、リスク、簡単にできる箇所を重要度順に。"
       },
       "body": {
         "zh": "请审查下面的代码，像一位严格但友善的资深工程师：\n1. 先列出会导致错误结果或崩溃的问题（给出触发条件）\n2. 再列出安全、性能和并发方面的风险\n3. 最后列出可以更简单的写法\n每一条都标注严重程度（高/中/低），并给出修改后的代码片段。不要挑格式上的小毛病。\n\n```\n{{剪贴板}}\n```",
-        "en": "Review the code below like a strict but kind senior engineer:\n1. First, issues that cause wrong results or crashes (with the triggering input)\n2. Then security, performance and concurrency risks\n3. Finally, simpler ways to write it\nTag each with severity (high/medium/low) and show the fixed snippet. Skip nitpicks about formatting.\n\n```\n{{clipboard}}\n```"
+        "en": "Review the code below like a strict but kind senior engineer:\n1. First, issues that cause wrong results or crashes (with the triggering input)\n2. Then security, performance and concurrency risks\n3. Finally, simpler ways to write it\nTag each with severity (high/medium/low) and show the fixed snippet. Skip nitpicks about formatting.\n\n```\n{{clipboard}}\n```",
+        "ja": "厳しくも親切なシニアエンジニアとして、以下のコードをレビューしてください：\n1. まず、間違った結果やクラッシュにつながる問題（発生条件つき）\n2. 次に、セキュリティ、パフォーマンス、並行処理のリスク\n3. 最後に、もっとシンプルに書ける箇所\nそれぞれ重要度（高・中・低）をつけ、修正後のコードを示してください。書式の細かい指摘は不要です。\n\n```\n{{clipboard}}\n```"
       },
       "tags": {
         "zh": [
@@ -322,6 +394,9 @@
         ],
         "en": [
           "code review"
+        ],
+        "ja": [
+          "コードレビュー"
         ]
       },
       "featured": true
@@ -331,15 +406,18 @@
       "category": "coding",
       "title": {
         "zh": "这个报错是什么意思",
-        "en": "Explain this error"
+        "en": "Explain this error",
+        "ja": "このエラーの意味は？"
       },
       "summary": {
         "zh": "贴报错，得到原因、定位步骤和修复方法。",
-        "en": "Paste an error; get the cause, how to locate it, and the fix."
+        "en": "Paste an error; get the cause, how to locate it, and the fix.",
+        "ja": "エラーを貼ると、原因、調べ方、直し方がわかります。"
       },
       "body": {
         "zh": "我遇到了下面这个报错。请：\n1. 用一句话说明它真正的意思\n2. 列出最可能的 3 个原因，按可能性排序\n3. 给出逐步排查的方法（每一步要看什么、运行什么命令）\n4. 给出最可能的修复方法\n\n报错：\n```\n{{剪贴板}}\n```",
-        "en": "I got the error below. Please:\n1. Say in one sentence what it really means\n2. List the 3 most likely causes, ranked\n3. Give step-by-step debugging (what to check, which command to run)\n4. Give the most likely fix\n\nError:\n```\n{{clipboard}}\n```"
+        "en": "I got the error below. Please:\n1. Say in one sentence what it really means\n2. List the 3 most likely causes, ranked\n3. Give step-by-step debugging (what to check, which command to run)\n4. Give the most likely fix\n\nError:\n```\n{{clipboard}}\n```",
+        "ja": "以下のエラーが出ました。お願い：\n1. 本当の意味を一文で\n2. 考えられる原因を可能性の高い順に三つ\n3. 一歩ずつの調べ方（何を見て、どのコマンドを実行するか）\n4. 最も可能性の高い直し方\n\nエラー：\n```\n{{clipboard}}\n```"
       },
       "tags": {
         "zh": [
@@ -349,6 +427,10 @@
         "en": [
           "debugging",
           "errors"
+        ],
+        "ja": [
+          "デバッグ",
+          "エラー"
         ]
       },
       "featured": false
@@ -358,15 +440,18 @@
       "category": "coding",
       "title": {
         "zh": "补单元测试",
-        "en": "Write unit tests"
+        "en": "Write unit tests",
+        "ja": "単体テストを書く"
       },
       "summary": {
         "zh": "覆盖正常、边界和异常情况。",
-        "en": "Cover the happy path, edge cases and failures."
+        "en": "Cover the happy path, edge cases and failures.",
+        "ja": "正常系、境界値、異常系をカバー。"
       },
       "body": {
         "zh": "为下面的代码写单元测试：\n- 用项目里已经在用的测试框架（看不出来就用最常见的）\n- 覆盖正常情况、边界值、空输入、异常输入\n- 每个测试名说清楚它在验证什么\n- 如果发现代码本身有 bug，先指出来再写测试\n\n```\n{{剪贴板}}\n```",
-        "en": "Write unit tests for the code below:\n- Use the framework the project already uses (or the most common one)\n- Cover happy path, boundaries, empty input, invalid input\n- Name each test after what it verifies\n- If you find a bug in the code, point it out first\n\n```\n{{clipboard}}\n```"
+        "en": "Write unit tests for the code below:\n- Use the framework the project already uses (or the most common one)\n- Cover happy path, boundaries, empty input, invalid input\n- Name each test after what it verifies\n- If you find a bug in the code, point it out first\n\n```\n{{clipboard}}\n```",
+        "ja": "以下のコードの単体テストを書いてください：\n- プロジェクトで使っているテストフレームワークを使う（わからなければ一般的なもの）\n- 正常系、境界値、空の入力、不正な入力をカバー\n- テスト名で何を確かめるかがわかるように\n- コード自体にバグを見つけたら、先に指摘する\n\n```\n{{clipboard}}\n```"
       },
       "tags": {
         "zh": [
@@ -374,6 +459,9 @@
         ],
         "en": [
           "testing"
+        ],
+        "ja": [
+          "テスト"
         ]
       },
       "featured": false
@@ -383,21 +471,27 @@
       "category": "coding",
       "title": {
         "zh": "写提交说明",
-        "en": "Write a commit message"
+        "en": "Write a commit message",
+        "ja": "コミットメッセージを書く"
       },
       "summary": {
         "zh": "根据 diff 写清楚的 commit message。",
-        "en": "A clear commit message from a diff."
+        "en": "A clear commit message from a diff.",
+        "ja": "diff から、わかりやすいコミットメッセージを。"
       },
       "body": {
         "zh": "根据下面的 diff 写一条 git commit message：\n- 第一行不超过 60 个字符，用祈使句，说清楚改了什么\n- 空一行后，用 2~4 个要点说明为什么改、有什么影响\n- 不要罗列每个文件\n\n{{剪贴板}}",
-        "en": "Write a git commit message for the diff below:\n- First line under 60 characters, imperative mood, what changed\n- Then a blank line and 2–4 bullets on why and the impact\n- Don't list every file\n\n{{clipboard}}"
+        "en": "Write a git commit message for the diff below:\n- First line under 60 characters, imperative mood, what changed\n- Then a blank line and 2–4 bullets on why and the impact\n- Don't list every file\n\n{{clipboard}}",
+        "ja": "以下の diff から git のコミットメッセージを書いてください：\n- 1行目は60文字以内、命令形で何を変えたか\n- 空行のあと、なぜ変えたか・影響を2〜4個の箇条書きで\n- ファイルを一つずつ並べない\n\n{{clipboard}}"
       },
       "tags": {
         "zh": [
           "git"
         ],
         "en": [
+          "git"
+        ],
+        "ja": [
           "git"
         ]
       },
@@ -408,15 +502,18 @@
       "category": "work",
       "title": {
         "zh": "会议纪要",
-        "en": "Meeting notes"
+        "en": "Meeting notes",
+        "ja": "議事録"
       },
       "summary": {
         "zh": "把聊天记录或录音转文字整理成纪要和待办。",
-        "en": "Turn a transcript into notes and action items."
+        "en": "Turn a transcript into notes and action items.",
+        "ja": "会議のメモや文字起こしを議事録とToDoに。"
       },
       "body": {
         "zh": "把下面的会议记录整理成纪要：\n1. 三句话概括这次会议决定了什么\n2. 讨论要点（按议题分组）\n3. 待办事项表格：事项 / 负责人 / 截止时间（没说的标「待定」）\n4. 还没有结论、需要后续跟进的问题\n\n记录：\n{{剪贴板}}",
-        "en": "Turn the meeting record below into notes:\n1. Three sentences on what was decided\n2. Discussion points, grouped by topic\n3. Action items table: task / owner / due date (mark \"TBD\" if missing)\n4. Open questions that need follow-up\n\nRecord:\n{{clipboard}}"
+        "en": "Turn the meeting record below into notes:\n1. Three sentences on what was decided\n2. Discussion points, grouped by topic\n3. Action items table: task / owner / due date (mark \"TBD\" if missing)\n4. Open questions that need follow-up\n\nRecord:\n{{clipboard}}",
+        "ja": "以下の会議の記録を議事録にまとめてください：\n1. この会議で決まったことを三文で\n2. 議題ごとの論点\n3. ToDo の表：内容 / 担当者 / 期限（不明なら「未定」）\n4. 結論が出ず、フォローが必要な点\n\n記録：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -426,6 +523,10 @@
         "en": [
           "meetings",
           "to-dos"
+        ],
+        "ja": [
+          "会議",
+          "ToDo"
         ]
       },
       "featured": true
@@ -435,15 +536,18 @@
       "category": "work",
       "title": {
         "zh": "帮我回邮件",
-        "en": "Reply to this email"
+        "en": "Reply to this email",
+        "ja": "メールに返信"
       },
       "summary": {
         "zh": "礼貌、简短、把事情说清楚。",
-        "en": "Polite, short, and clear."
+        "en": "Polite, short, and clear.",
+        "ja": "丁寧に、短く、要点をはっきり。"
       },
       "body": {
         "zh": "帮我回复下面这封邮件。我的意思是：{{输入}}\n\n要求：语气礼貌但不啰嗦，先回应对方最关心的事，三段以内，结尾给出明确的下一步。用对方邮件的语言回复。\n\n原邮件：\n{{剪贴板}}",
-        "en": "Help me reply to the email below. What I want to say: {{input}}\n\nPolite but brief, address their main concern first, three paragraphs max, end with a clear next step. Reply in the language of the original email.\n\nEmail:\n{{clipboard}}"
+        "en": "Help me reply to the email below. What I want to say: {{input}}\n\nPolite but brief, address their main concern first, three paragraphs max, end with a clear next step. Reply in the language of the original email.\n\nEmail:\n{{clipboard}}",
+        "ja": "以下のメールに返信を書いてください。伝えたいこと：{{input}}\n\n丁寧だけど冗長にせず、相手が一番気にしている点に先に答え、三段落以内、最後に次のステップをはっきり書く。元のメールと同じ言語で返信してください。\n\n元のメール：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -451,6 +555,9 @@
         ],
         "en": [
           "email"
+        ],
+        "ja": [
+          "メール"
         ]
       },
       "featured": false
@@ -460,15 +567,18 @@
       "category": "work",
       "title": {
         "zh": "周报",
-        "en": "Weekly report"
+        "en": "Weekly report",
+        "ja": "週報"
       },
       "summary": {
         "zh": "把零散的工作记录整理成有重点的周报。",
-        "en": "Turn scattered notes into a focused weekly report."
+        "en": "Turn scattered notes into a focused weekly report.",
+        "ja": "バラバラの作業メモを、要点のある週報に。"
       },
       "body": {
         "zh": "把下面零散的工作记录整理成周报：\n- 本周完成（按价值大小排序，每条写清结果，有数字的写数字）\n- 进行中（进度和预计完成时间）\n- 遇到的问题和需要的支持\n- 下周计划（3~5 条）\n语气平实，不要夸大。\n\n记录：\n{{剪贴板}}",
-        "en": "Turn the notes below into a weekly report:\n- Done this week (by value, with results and numbers)\n- In progress (status and ETA)\n- Blockers and help needed\n- Next week (3–5 items)\nPlain tone, no exaggeration.\n\nNotes:\n{{clipboard}}"
+        "en": "Turn the notes below into a weekly report:\n- Done this week (by value, with results and numbers)\n- In progress (status and ETA)\n- Blockers and help needed\n- Next week (3–5 items)\nPlain tone, no exaggeration.\n\nNotes:\n{{clipboard}}",
+        "ja": "以下の作業メモを週報にまとめてください：\n- 今週やったこと（価値の大きい順、結果と数字を明記）\n- 進行中のこと（進み具合と完了予定）\n- 困っていること・必要な支援\n- 来週の予定（3〜5個）\n淡々とした口調で、誇張しないこと。\n\nメモ：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -478,6 +588,10 @@
         "en": [
           "reports",
           "status"
+        ],
+        "ja": [
+          "報告",
+          "進捗"
         ]
       },
       "featured": false
@@ -487,15 +601,18 @@
       "category": "learning",
       "title": {
         "zh": "费曼学习法",
-        "en": "Feynman technique"
+        "en": "Feynman technique",
+        "ja": "ファインマン学習法"
       },
       "summary": {
         "zh": "让 AI 考你：你讲，它挑漏洞。",
-        "en": "You explain, the AI finds the gaps."
+        "en": "You explain, the AI finds the gaps.",
+        "ja": "あなたが説明し、AI が穴を見つけます。"
       },
       "body": {
         "zh": "我在学「{{输入}}」。我们用费曼学习法：\n1. 先请你问我一个问题，让我用自己的话解释这个概念\n2. 我回答后，你指出我解释里模糊、错误或跳步的地方\n3. 再追问一个更深的问题\n重复 3 轮，最后总结我还没真正掌握的部分。现在请问第一个问题。",
-        "en": "I'm learning \"{{input}}\". Let's use the Feynman technique:\n1. Ask me to explain the concept in my own words\n2. After I answer, point out what's vague, wrong, or skipped\n3. Ask a deeper follow-up\nRepeat 3 rounds, then summarize what I haven't truly mastered. Ask the first question now."
+        "en": "I'm learning \"{{input}}\". Let's use the Feynman technique:\n1. Ask me to explain the concept in my own words\n2. After I answer, point out what's vague, wrong, or skipped\n3. Ask a deeper follow-up\nRepeat 3 rounds, then summarize what I haven't truly mastered. Ask the first question now.",
+        "ja": "「{{input}}」を勉強しています。ファインマン学習法でいきましょう：\n1. まず、この概念を自分の言葉で説明させる質問をしてください\n2. 私が答えたら、あいまいな点、間違い、飛ばしている点を指摘してください\n3. さらに深い質問をしてください\nこれを3回繰り返し、最後に私がまだ本当には理解していない部分をまとめてください。では最初の質問をどうぞ。"
       },
       "tags": {
         "zh": [
@@ -503,6 +620,9 @@
         ],
         "en": [
           "study"
+        ],
+        "ja": [
+          "学習法"
         ]
       },
       "featured": false
@@ -512,15 +632,18 @@
       "category": "learning",
       "title": {
         "zh": "四周学习计划",
-        "en": "Four-week study plan"
+        "en": "Four-week study plan",
+        "ja": "4週間の学習計画"
       },
       "summary": {
         "zh": "从零到能用，每周有目标和练习。",
-        "en": "From zero to useful, with weekly goals and exercises."
+        "en": "From zero to useful, with weekly goals and exercises.",
+        "ja": "ゼロから使えるレベルへ。毎週の目標と練習つき。"
       },
       "body": {
         "zh": "我想在四周内学会「{{输入}}」，每天能投入大约 1 小时。\n请给我一份学习计划：\n- 每周一个明确目标，以及怎么检验自己达到了\n- 每天的任务（看什么、做什么练习）\n- 推荐的免费资料\n- 最容易卡住的地方和应对办法",
-        "en": "I want to learn \"{{input}}\" in four weeks with about one hour a day.\nGive me a plan:\n- One clear goal per week and how to check I've reached it\n- Daily tasks (what to read, which exercise)\n- Recommended free resources\n- Where people usually get stuck and how to get past it"
+        "en": "I want to learn \"{{input}}\" in four weeks with about one hour a day.\nGive me a plan:\n- One clear goal per week and how to check I've reached it\n- Daily tasks (what to read, which exercise)\n- Recommended free resources\n- Where people usually get stuck and how to get past it",
+        "ja": "4週間で「{{input}}」を身につけたいです。1日1時間くらい使えます。\n学習計画をください：\n- 毎週の明確な目標と、達成できたかの確かめ方\n- 毎日のタスク（何を読み、どんな練習をするか）\n- おすすめの無料教材\n- つまずきやすい点とその乗り越え方"
       },
       "tags": {
         "zh": [
@@ -528,6 +651,9 @@
         ],
         "en": [
           "plan"
+        ],
+        "ja": [
+          "計画"
         ]
       },
       "featured": false
@@ -537,15 +663,18 @@
       "category": "learning",
       "title": {
         "zh": "出题考我",
-        "en": "Quiz me"
+        "en": "Quiz me",
+        "ja": "問題を出して"
       },
       "summary": {
         "zh": "根据一段材料出题，答完再讲解。",
-        "en": "Questions from your material, explained after answering."
+        "en": "Questions from your material, explained after answering.",
+        "ja": "資料から問題を出し、答えたあとに解説。"
       },
       "body": {
         "zh": "根据下面的材料出 5 道题考我：2 道选择题、2 道简答题、1 道应用题。\n一次只出一道，等我回答后再判断对错、讲解，然后出下一道。\n\n材料：\n{{剪贴板}}",
-        "en": "Quiz me on the material below with 5 questions: 2 multiple choice, 2 short answer, 1 applied.\nAsk one at a time; after I answer, grade it, explain, then ask the next.\n\nMaterial:\n{{clipboard}}"
+        "en": "Quiz me on the material below with 5 questions: 2 multiple choice, 2 short answer, 1 applied.\nAsk one at a time; after I answer, grade it, explain, then ask the next.\n\nMaterial:\n{{clipboard}}",
+        "ja": "以下の資料から問題を5問出してください：選択問題2問、記述問題2問、応用問題1問。\n1問ずつ出し、私が答えたら正誤と解説をして、次の問題に進んでください。\n\n資料：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -555,6 +684,10 @@
         "en": [
           "review",
           "quiz"
+        ],
+        "ja": [
+          "復習",
+          "クイズ"
         ]
       },
       "featured": false
@@ -564,15 +697,18 @@
       "category": "social",
       "title": {
         "zh": "改写成小红书笔记",
-        "en": "Turn into a Xiaohongshu post"
+        "en": "Turn into a Xiaohongshu post",
+        "ja": "小紅書（RED）の投稿に"
       },
       "summary": {
         "zh": "有标题、有分段、有 emoji，但不浮夸。",
-        "en": "Catchy title, short sections, light emoji."
+        "en": "Catchy title, short sections, light emoji.",
+        "ja": "目を引くタイトル、短い段落、ほどよい絵文字。"
       },
       "body": {
         "zh": "把下面的内容改写成一篇小红书笔记：\n- 标题 20 字以内，带一个具体数字或反差\n- 正文分 4~6 个小段，每段一两句话\n- 适量 emoji，不要每句都有\n- 结尾一句引导评论的问题\n- 最后给 5 个话题标签\n\n内容：\n{{剪贴板}}",
-        "en": "Rewrite the content below as a Xiaohongshu (RED) post:\n- Title under 20 characters with a number or contrast\n- 4–6 short sections, one or two sentences each\n- Some emoji, not on every line\n- End with a question that invites comments\n- Add 5 hashtags\n\nContent:\n{{clipboard}}"
+        "en": "Rewrite the content below as a Xiaohongshu (RED) post:\n- Title under 20 characters with a number or contrast\n- 4–6 short sections, one or two sentences each\n- Some emoji, not on every line\n- End with a question that invites comments\n- Add 5 hashtags\n\nContent:\n{{clipboard}}",
+        "ja": "以下の内容を小紅書（RED）の投稿に書き直してください：\n- タイトルは20文字以内で、具体的な数字か意外性を入れる\n- 本文は4〜6個の短い段落、各1〜2文\n- 絵文字はほどほどに\n- 最後にコメントを誘う質問を一つ\n- ハッシュタグを5つ\n\n内容：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -582,6 +718,10 @@
         "en": [
           "RED",
           "copy"
+        ],
+        "ja": [
+          "小紅書",
+          "コピー"
         ]
       },
       "featured": false
@@ -591,15 +731,18 @@
       "category": "social",
       "title": {
         "zh": "写成一条推文",
-        "en": "Write a tweet"
+        "en": "Write a tweet",
+        "ja": "ポスト（ツイート）にする"
       },
       "summary": {
         "zh": "280 字以内，有观点、有细节。",
-        "en": "Under 280 characters, with a point and a detail."
+        "en": "Under 280 characters, with a point and a detail.",
+        "ja": "280文字以内で、主張と具体的な一点を。"
       },
       "body": {
         "zh": "把下面的内容写成一条推文：\n- 中文 140 字以内（英文 280 字符以内）\n- 第一句就给出观点或反差\n- 保留一个最具体的细节或数字\n- 口语化，不要 hashtag 堆砌\n给 3 个版本：克制版、有趣版、带一点争议的版。\n\n内容：\n{{剪贴板}}",
-        "en": "Turn the content below into a tweet:\n- Under 280 characters\n- Lead with the point or the contrast\n- Keep the single most concrete detail or number\n- Conversational, no hashtag stuffing\nGive 3 versions: understated, playful, slightly provocative.\n\nContent:\n{{clipboard}}"
+        "en": "Turn the content below into a tweet:\n- Under 280 characters\n- Lead with the point or the contrast\n- Keep the single most concrete detail or number\n- Conversational, no hashtag stuffing\nGive 3 versions: understated, playful, slightly provocative.\n\nContent:\n{{clipboard}}",
+        "ja": "以下の内容を X のポストにしてください：\n- 日本語なら140文字以内\n- 一文目で主張か意外性を出す\n- いちばん具体的な事実か数字を一つ残す\n- 話し言葉で、ハッシュタグを詰め込まない\n控えめ版、おもしろ版、少し挑発的な版の3パターンをください。\n\n内容：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -607,6 +750,10 @@
           "X"
         ],
         "en": [
+          "Twitter",
+          "X"
+        ],
+        "ja": [
           "Twitter",
           "X"
         ]
@@ -618,15 +765,18 @@
       "category": "social",
       "title": {
         "zh": "一分钟短视频脚本",
-        "en": "One-minute video script"
+        "en": "One-minute video script",
+        "ja": "1分のショート動画台本"
       },
       "summary": {
         "zh": "前三秒抓人，分镜加口播。",
-        "en": "Hook in 3 seconds, shots plus voice-over."
+        "en": "Hook in 3 seconds, shots plus voice-over.",
+        "ja": "最初の3秒で引きつけ、カット割りとナレーションつき。"
       },
       "body": {
         "zh": "根据下面的主题写一个 60 秒短视频脚本：{{输入}}\n\n用表格：时间 / 画面 / 口播 / 字幕。\n- 前 3 秒必须有一个钩子（问题、反差或结果先行）\n- 中间给 3 个信息点\n- 最后 5 秒给一个行动号召",
-        "en": "Write a 60-second short video script about: {{input}}\n\nTable: time / visuals / voice-over / on-screen text.\n- A hook in the first 3 seconds (question, contrast, or result first)\n- 3 key points in the middle\n- A call to action in the last 5 seconds"
+        "en": "Write a 60-second short video script about: {{input}}\n\nTable: time / visuals / voice-over / on-screen text.\n- A hook in the first 3 seconds (question, contrast, or result first)\n- 3 key points in the middle\n- A call to action in the last 5 seconds",
+        "ja": "次のテーマで60秒のショート動画の台本を書いてください：{{input}}\n\n表で：時間 / 映像 / ナレーション / テロップ。\n- 最初の3秒に必ずフック（問い、意外性、結果を先に見せる）\n- 中盤で要点を三つ\n- 最後の5秒で行動を促す"
       },
       "tags": {
         "zh": [
@@ -636,6 +786,10 @@
         "en": [
           "video",
           "script"
+        ],
+        "ja": [
+          "動画",
+          "台本"
         ]
       },
       "featured": false
@@ -645,15 +799,18 @@
       "category": "translate",
       "title": {
         "zh": "地道翻译",
-        "en": "Natural translation"
+        "en": "Natural translation",
+        "ja": "自然な翻訳"
       },
       "summary": {
         "zh": "翻得像母语者写的，不是逐字翻。",
-        "en": "Reads like a native speaker wrote it."
+        "en": "Reads like a native speaker wrote it.",
+        "ja": "ネイティブが書いたように訳します。"
       },
       "body": {
         "zh": "把下面的内容翻译成{{输入}}。\n要求：\n- 像母语者自然写出来的，不要逐字直译\n- 专有名词保留原文，必要时括号注释\n- 语气和原文一致（正式就正式，口语就口语）\n- 翻完后列出 2~3 处你做了意译的地方\n\n原文：\n{{剪贴板}}",
-        "en": "Translate the text below into {{input}}.\n- Make it read like a native speaker wrote it, not word for word\n- Keep proper nouns, with a short note if needed\n- Match the original tone (formal or casual)\n- Afterwards, list 2–3 places where you translated loosely and why\n\nText:\n{{clipboard}}"
+        "en": "Translate the text below into {{input}}.\n- Make it read like a native speaker wrote it, not word for word\n- Keep proper nouns, with a short note if needed\n- Match the original tone (formal or casual)\n- Afterwards, list 2–3 places where you translated loosely and why\n\nText:\n{{clipboard}}",
+        "ja": "以下の文章を{{input}}に翻訳してください。\n- 直訳ではなく、ネイティブが自然に書いたように\n- 固有名詞は原文のまま、必要ならかっこで補足\n- 原文の口調（かたい・くだけた）に合わせる\n- 最後に、意訳した箇所を2〜3個挙げて理由を説明\n\n原文：\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -661,6 +818,9 @@
         ],
         "en": [
           "translate"
+        ],
+        "ja": [
+          "翻訳"
         ]
       },
       "featured": true
@@ -670,15 +830,18 @@
       "category": "translate",
       "title": {
         "zh": "拆解这句外语",
-        "en": "Break down this sentence"
+        "en": "Break down this sentence",
+        "ja": "この外国語の文を分解"
       },
       "summary": {
         "zh": "逐词解释语法和用法，适合学日语、英语。",
-        "en": "Word-by-word grammar breakdown for language learners."
+        "en": "Word-by-word grammar breakdown for language learners.",
+        "ja": "単語ごとに文法と使い方を解説。語学学習に。"
       },
       "body": {
         "zh": "请拆解下面这句外语，我正在学这门语言：\n1. 整句的自然翻译\n2. 逐词（或逐个语法单元）解释：意思、词性、语法作用\n3. 句子里用到的语法点，各给一个新例句\n4. 母语者会不会这样说，有没有更自然的说法\n\n{{剪贴板}}",
-        "en": "Break down the sentence below; I'm learning this language:\n1. A natural translation\n2. Word by word (or by grammar unit): meaning, part of speech, role\n3. Each grammar point used, with one new example sentence\n4. Would a native speaker say it this way? Is there a more natural phrasing?\n\n{{clipboard}}"
+        "en": "Break down the sentence below; I'm learning this language:\n1. A natural translation\n2. Word by word (or by grammar unit): meaning, part of speech, role\n3. Each grammar point used, with one new example sentence\n4. Would a native speaker say it this way? Is there a more natural phrasing?\n\n{{clipboard}}",
+        "ja": "以下の外国語の文を分解してください。この言語を勉強中です：\n1. 文全体の自然な訳\n2. 単語（または文法の単位）ごとの意味、品詞、文法上の役割\n3. 使われている文法ポイントごとに、新しい例文を一つ\n4. ネイティブはこう言うか。もっと自然な言い方はあるか\n\n{{clipboard}}"
       },
       "tags": {
         "zh": [
@@ -690,6 +853,11 @@
           "Japanese",
           "English",
           "grammar"
+        ],
+        "ja": [
+          "日本語",
+          "英語",
+          "文法"
         ]
       },
       "featured": false

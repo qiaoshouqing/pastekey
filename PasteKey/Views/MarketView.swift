@@ -13,17 +13,17 @@ struct MarketView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 10) {
-                TextField(L.t("搜索提示词市场", "Search the market"), text: $query).textFieldStyle(.roundedBorder).frame(maxWidth: 320)
+                TextField(L.t("搜索提示词市场", "Search the market", ja: "マーケットを検索"), text: $query).textFieldStyle(.roundedBorder).frame(maxWidth: 320)
                 Spacer()
                 if let err = market.lastError { Text(err).font(.caption).foregroundStyle(.secondary) }
                 Button { Task { await market.refresh() } } label: {
-                    if market.isRefreshing { ProgressView().controlSize(.small) } else { Label(L.t("更新", "Refresh"), systemImage: "arrow.clockwise") }
+                    if market.isRefreshing { ProgressView().controlSize(.small) } else { Label(L.t("更新", "Refresh", ja: "更新"), systemImage: "arrow.clockwise") }
                 }
             }
             .padding(.horizontal, 18).padding(.top, 14)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
-                    Chip(title: L.t("全部", "All"), icon: "square.grid.2x2", selected: category == nil) { category = nil }
+                    Chip(title: L.t("全部", "All", ja: "すべて"), icon: "square.grid.2x2", selected: category == nil) { category = nil }
                     ForEach(market.catalog.categories) { c in
                         Chip(title: c.name.value, icon: c.icon, selected: category == c.id) { category = c.id }
                     }
@@ -39,7 +39,7 @@ struct MarketView: View {
                 .padding(.horizontal, 18).padding(.bottom, 18)
             }
         }
-        .navigationTitle(L.t("提示词市场", "Prompt Market"))
+        .navigationTitle(L.t("提示词市场", "Prompt Market", ja: "プロンプトマーケット"))
         .sheet(item: $preview) { p in
             MarketPreview(prompt: p, category: market.categoryName(p.category), added: store.contains(marketID: p.id), onAdd: { add(p); preview = nil })
         }
@@ -73,7 +73,7 @@ private struct MarketCard: View {
             HStack {
                 Text(category).font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
                 Spacer()
-                if prompt.featured == true { Text(L.t("精选", "Featured")).font(.caption2.weight(.bold)).foregroundStyle(.orange) }
+                if prompt.featured == true { Text(L.t("精选", "Featured", ja: "おすすめ")).font(.caption2.weight(.bold)).foregroundStyle(.orange) }
             }
             Text(prompt.title.value).font(.system(size: 15, weight: .semibold)).lineLimit(2)
             Text(prompt.summary.value).font(.system(size: 12)).foregroundStyle(.secondary).lineLimit(3)
@@ -83,7 +83,7 @@ private struct MarketCard: View {
                     Text(t).font(.caption2).padding(.horizontal, 6).padding(.vertical, 2).background(Color.primary.opacity(0.06)).clipShape(Capsule())
                 }
                 Spacer()
-                Button(added ? L.t("已添加", "Added") : L.t("添加", "Add"), action: onAdd).disabled(added).controlSize(.small)
+                Button(added ? L.t("已添加", "Added", ja: "追加済み") : L.t("添加", "Add", ja: "追加"), action: onAdd).disabled(added).controlSize(.small)
             }
         }
         .padding(14)
@@ -109,10 +109,10 @@ private struct MarketPreview: View {
             }
             .background(Color.primary.opacity(0.04)).clipShape(RoundedRectangle(cornerRadius: 8))
             HStack {
-                Button(L.t("关闭", "Close")) { dismiss() }
+                Button(L.t("关闭", "Close", ja: "閉じる")) { dismiss() }
                 Spacer()
-                Button(copied ? L.t("已复制", "Copied") : L.t("复制", "Copy")) { PasteService.copy(prompt.body.value); copied = true }
-                Button(added ? L.t("已添加", "Added") : L.t("添加到我的提示词", "Add to My Prompts"), action: onAdd).disabled(added).buttonStyle(.borderedProminent)
+                Button(copied ? L.t("已复制", "Copied", ja: "コピーしました") : L.t("复制", "Copy", ja: "コピー")) { PasteService.copy(prompt.body.value); copied = true }
+                Button(added ? L.t("已添加", "Added", ja: "追加済み") : L.t("添加到我的提示词", "Add to My Prompts", ja: "マイプロンプトに追加"), action: onAdd).disabled(added).buttonStyle(.borderedProminent)
             }
         }
         .padding(22).frame(width: 620, height: 520)

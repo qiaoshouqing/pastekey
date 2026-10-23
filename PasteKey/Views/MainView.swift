@@ -5,9 +5,9 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
     var id: String { rawValue }
     var title: String {
         switch self {
-        case .prompts: return L.t("我的提示词", "My Prompts")
-        case .market: return L.t("提示词市场", "Prompt Market")
-        case .settings: return L.t("设置", "Settings")
+        case .prompts: return L.t("我的提示词", "My Prompts", ja: "マイプロンプト")
+        case .market: return L.t("提示词市场", "Prompt Market", ja: "プロンプトマーケット")
+        case .settings: return L.t("设置", "Settings", ja: "設定")
         }
     }
     var icon: String {
@@ -37,9 +37,9 @@ struct MainView: View {
             .navigationSplitViewColumnWidth(min: 170, ideal: 190)
             .safeAreaInset(edge: .bottom) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(L.t("在任何 App 里按", "Press anywhere")).font(.caption).foregroundStyle(.secondary)
+                    Text(L.t("在任何 App 里按", "Press anywhere", ja: "どのアプリでも")).font(.caption).foregroundStyle(.secondary)
                     Text(settings.panelHotkey?.display ?? "—").font(.system(.title3, design: .rounded).weight(.semibold))
-                    Text(L.t("搜索并粘贴提示词", "to search & paste a prompt")).font(.caption).foregroundStyle(.secondary)
+                    Text(L.t("搜索并粘贴提示词", "to search & paste a prompt", ja: "でプロンプトを検索・貼り付け")).font(.caption).foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading).padding(14)
             }
