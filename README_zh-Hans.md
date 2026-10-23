@@ -1,91 +1,42 @@
-<p align="center">
-  <img src="assets/icon.png" width="128" height="128" alt="PasteKey Icon">
-</p>
+<p align="center"><img src="assets/icon.png" width="128" height="128" alt="PasteKey"></p>
 
 <h1 align="center">PasteKey</h1>
 
-<p align="center">
-  一个轻量级的 macOS 菜单栏应用，让你通过自定义快捷键即时粘贴预设文本片段。
-</p>
+<p align="center"><b>好用的提示词，一个键就贴出去。</b><br>macOS 菜单栏小工具，把你攒的提示词一键贴进 ChatGPT、Claude、Cursor 或任何 App。</p>
 
-<p align="center">
-  <a href="README.md">English</a> · <a href="README_zh-Hant.md">繁體中文</a> · <a href="README_ja.md">日本語</a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="macOS 13+">
-  <img src="https://img.shields.io/badge/swift-5.9-orange" alt="Swift 5.9">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
-</p>
+<p align="center"><a href="README.md">English</a> · <a href="README_zh-Hant.md">繁體中文</a> · <a href="README_ja.md">日本語</a></p>
 
 ---
 
-## 功能特性
+## 能做什么
 
-- **即时粘贴** — 在任意应用中按下快捷键，预设文本立即粘贴
-- **自定义快捷键** — 为每个片段分配任意组合键（如 ⌘⇧1）
-- **剪贴板安全** — 粘贴后自动恢复原有剪贴板内容
-- **菜单栏应用** — 安静地驻留在菜单栏，无 Dock 图标
-- **开机自启** — 可选的登录时自动启动
+- **任何地方按 ⌥ Space**：弹出一个像 Spotlight 的面板，输入几个字搜到提示词，回车，就贴到光标所在的位置。
+- **每条提示词可以单独绑快捷键**：最常用的几条设成 ⌃⌥1 这样的组合键，按下直接贴，不用开面板。
+- **提示词市场**：内置 24 条精选提示词，分研究、写作、编程、职场、学习、自媒体、翻译 7 类，中英双语，一键添加。目录从这个仓库实时更新，加新提示词不用等 App 发版。
+- **变量**：提示词里写 `{{剪贴板}}`、`{{输入}}`、`{{日期}}`、`{{时间}}`。剪贴板和日期自动填好；`{{输入}}` 会在粘贴前让你现填一段。
+- **不弄乱剪贴板**：粘贴完，自动把你原来的剪贴板内容还回去。
+- **数据在自己手里**：提示词存成本机 JSON 文件，随时导出导入。联网只用来拉取公开的市场目录。
 
 ## 安装
 
-### 下载应用
+在 [Releases](https://github.com/qiaoshouqing/pastekey/releases/latest) 下载 `PasteKey-1.0.0.dmg`，把 PasteKey 拖进「应用程序」。App 用 Developer ID 签名并通过了 Apple 公证，双击就能打开。需要 macOS 13 或更新版本，Apple 芯片和 Intel 都支持。
 
-从[最新 Release](https://github.com/qiaoshouqing/pastekey/releases/latest) 下载 `PasteKey-0.1.0-macOS-universal.zip`，解压后将 `PasteKey.app` 移到“应用程序”文件夹。支持 macOS 13 及以上版本的 Apple 芯片和 Intel Mac。
+想要选中后自动粘贴，需要在「系统设置 › 隐私与安全性 › 辅助功能」里打开 PasteKey。不授权也能用：选中后会复制，自己按 ⌘V 即可。
 
-应用已做临时签名，但未经过 Apple 公证。如果 macOS 首次启动时拦截，请到 **系统设置 > 隐私与安全性** 中为 PasteKey 选择 **仍要打开**。首次使用时还需授予“辅助功能”权限，快捷键粘贴才能工作。
+## 投稿提示词
 
-### 从源码构建
+市场目录在 [`catalog/catalog.json`](catalog/catalog.json)。可以直接提 PR 加一条（标题、简介、正文都写 `zh` 和 `en`，再加标签），也可以[开个 issue](https://github.com/qiaoshouqing/pastekey/issues) 把提示词贴给我。改了文件记得把 `version` 加一，已安装的 App 才会更新。
 
-需要 macOS 13+ 和 Swift 5.9+。
+## 从源码构建
 
 ```bash
 git clone https://github.com/qiaoshouqing/pastekey.git
 cd pastekey
-swift build -c release
+open PasteKey.xcodeproj
 ```
 
-构建产物位于 `.build/release/PasteKey`。
+`scripts/release.sh <版本号> [--appstore]` 一条命令完成归档、Developer ID 签名、公证，在 `dist/` 里生成 zip 和 dmg；加 `--appstore` 会同时上传到 App Store Connect。
 
-在 macOS 上运行 `bash scripts/package-macos.sh 0.1.0` 可生成可分发的应用和 zip，输出位于 `dist/`。
+## 许可
 
-### 直接运行
-
-```bash
-swift run PasteKey
-```
-
-## 使用方法
-
-1. 点击菜单栏中的剪贴板图标
-2. 选择 **Settings...** 打开主窗口
-3. 从左侧边栏选择一个片段（或点击 **+** 新建）
-4. 输入你想要快速粘贴的文本
-5. 点击快捷键录制框，按下组合键（如 ⌘⇧1）
-6. 关闭窗口 — 现在在任意应用中按下该快捷键即可粘贴文本
-
-### 辅助功能权限
-
-PasteKey 需要辅助功能权限来模拟键盘粘贴操作。首次启动时，macOS 会提示你在 **系统设置 > 隐私与安全性 > 辅助功能** 中授予权限。
-
-## 工作原理
-
-当你按下快捷键时，PasteKey 会：
-
-1. 保存当前剪贴板内容
-2. 将片段文本写入剪贴板
-3. 模拟 ⌘V 进行粘贴
-4. 恢复原有的剪贴板内容
-
-因此它几乎可以在所有支持粘贴的应用中工作。
-
-## 技术栈
-
-- SwiftUI + AppKit
-- [HotKey](https://github.com/soffes/HotKey) 用于全局快捷键注册
-- Swift Package Manager
-
-## 许可证
-
-[MIT](LICENSE)
+MIT © POMODIARY LLC

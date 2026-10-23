@@ -1,91 +1,42 @@
-<p align="center">
-  <img src="assets/icon.png" width="128" height="128" alt="PasteKey Icon">
-</p>
+<p align="center"><img src="assets/icon.png" width="128" height="128" alt="PasteKey"></p>
 
 <h1 align="center">PasteKey</h1>
 
-<p align="center">
-  A lightweight macOS menu bar app that lets you paste predefined text snippets instantly with custom hotkeys.
-</p>
+<p align="center"><b>Your AI prompts, one keystroke away.</b><br>A macOS menu bar app that pastes your best prompts into ChatGPT, Claude, Cursor or any other app.</p>
 
-<p align="center">
-  <a href="README_zh-Hans.md">简体中文</a> · <a href="README_zh-Hant.md">繁體中文</a> · <a href="README_ja.md">日本語</a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/platform-macOS%2013%2B-blue" alt="macOS 13+">
-  <img src="https://img.shields.io/badge/swift-5.9-orange" alt="Swift 5.9">
-  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
-</p>
+<p align="center"><a href="README_zh-Hans.md">简体中文</a> · <a href="README_zh-Hant.md">繁體中文</a> · <a href="README_ja.md">日本語</a></p>
 
 ---
 
-## Features
+## What it does
 
-- **Instant paste** — Press a hotkey in any app, and your predefined text is pasted immediately
-- **Custom hotkeys** — Assign any key combination (e.g. ⌘⇧1) to each snippet
-- **Clipboard-safe** — Saves and restores your clipboard content after pasting
-- **Menu bar app** — Lives quietly in your menu bar, no Dock icon
-- **Launch at Login** — Optional auto-start when you log in
+- **⌥ Space anywhere** — a Spotlight-style panel opens over any app. Type to search your prompts, press ↩, and the prompt is pasted where your cursor was.
+- **A hotkey per prompt** — give your most-used prompts their own shortcut (e.g. ⌃⌥1). Press it and the text is pasted instantly, no panel.
+- **Prompt market** — 24 hand-picked prompts for research, writing, coding, work, learning, social media and translation, in English and Chinese. Add any of them with one click. The catalog updates from this repo, so new prompts arrive without an app update.
+- **Variables** — write `{{clipboard}}`, `{{input}}`, `{{date}}` or `{{time}}` in a prompt. Clipboard and date are filled in automatically; `{{input}}` asks you for text before pasting.
+- **Clipboard-safe** — after pasting, your previous clipboard is restored.
+- **Private** — prompts are stored on your Mac as plain JSON. Export and import them any time. The network is only used to fetch the public market catalog.
 
-## Installation
+## Install
 
-### Download the App
+Download `PasteKey-1.0.0.dmg` from the [latest release](https://github.com/qiaoshouqing/pastekey/releases/latest) and drag PasteKey to Applications. The app is signed with Developer ID and notarized by Apple. Requires macOS 13 or later, Apple Silicon or Intel.
 
-Download `PasteKey-0.1.0-macOS-universal.zip` from the [latest release](https://github.com/qiaoshouqing/pastekey/releases/latest), unzip it, and move `PasteKey.app` to Applications. It supports Apple Silicon and Intel Macs running macOS 13 or later.
+To paste automatically, allow PasteKey under **System Settings › Privacy & Security › Accessibility**. Without that permission PasteKey still works: the prompt is copied and you press ⌘V.
 
-The app is ad-hoc signed but not Apple notarized. If macOS blocks the first launch, open **System Settings > Privacy & Security** and choose **Open Anyway** for PasteKey. Grant Accessibility permission when prompted so hotkey pasting works.
+## Contribute a prompt
 
-### Build from Source
+The market lives in [`catalog/catalog.json`](catalog/catalog.json). Open a pull request with a new entry (title, summary and body in `zh` and `en`, plus tags), or [open an issue](https://github.com/qiaoshouqing/pastekey/issues) with your prompt. Bump `version` when you change the file so installed apps pick it up.
 
-Requires macOS 13+ and Swift 5.9+.
+## Build from source
 
 ```bash
 git clone https://github.com/qiaoshouqing/pastekey.git
 cd pastekey
-swift build -c release
+open PasteKey.xcodeproj
 ```
 
-The built binary is at `.build/release/PasteKey`.
-
-To build the distributable app and zip on macOS, run `bash scripts/package-macos.sh 0.1.0`. The archive is written to `dist/`.
-
-### Run Directly
-
-```bash
-swift run PasteKey
-```
-
-## Usage
-
-1. Click the clipboard icon in the menu bar
-2. Select **Settings...** to open the main window
-3. Select a snippet from the sidebar (or click **+** to create one)
-4. Enter the text you want to quick-paste
-5. Click the hotkey recorder and press a key combination (e.g. ⌘⇧1)
-6. Close the window — now press that hotkey in any app to paste your text
-
-### Accessibility Permission
-
-PasteKey needs Accessibility permission to simulate keyboard pasting. On first launch, macOS will prompt you to grant access in **System Settings > Privacy & Security > Accessibility**.
-
-## How It Works
-
-When you press a hotkey, PasteKey:
-
-1. Saves your current clipboard
-2. Puts the snippet text on the clipboard
-3. Simulates ⌘V to paste
-4. Restores your original clipboard
-
-This means it works in virtually any app that supports paste.
-
-## Tech Stack
-
-- SwiftUI + AppKit
-- [HotKey](https://github.com/soffes/HotKey) for global hotkey registration
-- Swift Package Manager
+`scripts/release.sh <version> [--appstore]` archives, signs with Developer ID, notarizes, and writes a zip and dmg to `dist/`. With `--appstore` it also uploads the build to App Store Connect.
 
 ## License
 
-[MIT](LICENSE)
+MIT © POMODIARY LLC
